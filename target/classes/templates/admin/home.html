@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Admin Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+/****** LOGIN MODAL ******/
+.loginmodal-container {
+	padding: 30px;
+	max-width: 350px;
+	width: 100% !important;
+	background-color: #F7F7F7;
+	margin: 0 auto;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	font-family: roboto;
+}
+
+.loginmodal-container h1 {
+	text-align: center;
+	font-size: 1.8em;
+	font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password] {
+	height: 44px;
+	font-size: 16px;
+	width: 100%;
+	margin-bottom: 10px;
+	-webkit-appearance: none;
+	background: #fff;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	/* border-radius: 2px; */
+	padding: 0 8px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover
+	{
+	border: 1px solid #b9b9b9;
+	border-top: 1px solid #a0a0a0;
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.loginmodal {
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Arial', sans-serif;
+	font-weight: 700;
+	height: 36px;
+	padding: 0 8px;
+	/* border-radius: 3px; */
+	/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+	/* border: 1px solid #3079ed; */
+	border: 0px;
+	color: #fff;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	background-color: #4d90fe;
+	padding: 17px 0px;
+	font-family: roboto;
+	font-size: 14px;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+	/* border: 1px solid #2f5bb7; */
+	border: 0px;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	background-color: #357ae8;
+	/* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+	text-decoration: none;
+	color: #666;
+	font-weight: 400;
+	text-align: center;
+	display: inline-block;
+	opacity: 0.6;
+	transition: opacity ease 0.5s;
+}
+
+.login-help {
+	font-size: 12px;
+}
+</style>
+<body>
+	<div class="container">
+
+		<form th:action="@{/logout}" method="get">
+			<button class="btn btn-md btn-danger btn-block" name="registration"
+				type="Submit">Logout</button>
+		</form>
+
+		<div class="panel-group" style="margin-top: 40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span th:utext="${userName}"></span>
+				</div>
+				<a href="#" data-toggle="modal" data-target="#login-modal">Create
+					a library manager account</a> <a href="#" data-toggle="modal"
+					data-target="#login-modal">Create a library staff account</a>
+				<div class="modal fade" id="login-modal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true"
+					style="display: none;">
+					<div class="modal-dialog">
+						<div class="loginmodal-container">
+							<h1>Create Library Staff Account</h1>
+							<br>
+							<form autocomplete="off" action="#" th:action="@{/registration}"
+								th:object="${newUser}" method="post" class="form-horizontal"
+								role="form">
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+										class="validation-message"></label> <input type="text"
+										th:field="*{id}" placeholder="ID Number" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('firstName')}"
+										th:errors="*{firstName}" class="validation-message"></label> <input
+										type="text" th:field="*{firstName}" placeholder="First Name"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('middleName')}"
+										th:errors="*{middleName}" class="validation-message"></label>
+									<input type="text" th:field="*{middleName}"
+										placeholder="Middle Name" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('lastName')}"
+										th:errors="*{lastName}" class="validation-message"></label> <input
+										type="text" th:field="*{lastName}" placeholder="Last Name"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('birthday')}"
+										th:errors="*{birthday}" class="validation-message"></label> <input
+										type="text" th:field="*{birthday}" placeholder="Birthday"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<input type="text" th:field="*{email}" placeholder="Email"
+										class="form-control" /> <label
+										th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+										class="validation-message"></label>
+								</div>
+								<div class="form-group">
+									<input type="password" th:field="*{password}"
+										placeholder="Password" class="form-control" /> <label
+										th:if="${#fields.hasErrors('password')}"
+										th:errors="*{password}" class="validation-message"></label>
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('secretQuestion')}"
+										th:errors="*{secretQuestion}" class="validation-message"></label>
+									<input type="text" th:field="*{secretQuestion}"
+										placeholder="Secret Question" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('secretQuestionAnswer')}"
+										th:errors="*{secretQuestionAnswer}" class="validation-message"></label>
+									<input type="text" th:field="*{secretQuestionAnswer}"
+										placeholder="Secret Question Answer" class="form-control" />
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="register-submit"
+												id="register-submit" tabindex="4"
+												class="form-control btn btn-register" value="Register Now">
+										</div>
+									</div>
+								</div>
+								
+								<span th:utext="${successMessage}"></span>
+
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
