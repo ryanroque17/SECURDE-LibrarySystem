@@ -29,19 +29,22 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public void saveUser(User user) {
+	public void saveUser(User user, String role) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setActive(1);
         
-        int role = 1;
+        
         Role userRole = null;
-		if(role==1){
-			userRole = roleRepository.findByRole("STUDENT");
-		}else if(role==2){
-			userRole = roleRepository.findByRole("FACULTY");
-		}else if(role==3){
+		if(role.equals("user")){
+			int idChecker = Integer.parseInt(user.getId().substring(0, 4));
+			
+			if(idChecker == 1998 || (idChecker>2000 && idChecker<3000))
+				userRole = roleRepository.findByRole("FACULTY");
+			else
+				userRole = roleRepository.findByRole("STUDENT");
+		}else if(role.equals("libraryStaff")){
 			userRole = roleRepository.findByRole("LIBRARY_STAFF");
-		}else if(role==4){
+		}else if(role.equals("libraryManager")){
 			userRole = roleRepository.findByRole("LIBRARY_MANAGER");
 		}
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));

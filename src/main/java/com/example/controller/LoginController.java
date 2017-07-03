@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.User;
@@ -40,17 +41,22 @@ public class LoginController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public ModelAndView createNewUser(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult) {
+	@RequestMapping(value = {"/registration","/admin/create_employee"}, method = RequestMethod.POST)
+	public ModelAndView createNewUser(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult, @RequestParam("role") String role) {
 		ModelAndView modelAndView = new ModelAndView();
 		User userExists = userService.findUserByEmail(user.getEmail());
+		System.out.println("Ads");
 		if (userExists != null) {
 			bindingResult
 					.rejectValue("email", "error.user",
 							"There is already a user registered with the email provided");
 		}
 		if (bindingResult.hasErrors()) {
-			modelAndView.setViewName("registration");
+			if(role.equals("user"))
+				modelAndView.setViewName("registration");
+			else
+				modelAndView.setViewName("/admin/home");
+			
 			for (Object object : bindingResult.getAllErrors()) {
 			    if(object instanceof FieldError) {
 			        FieldError fieldError = (FieldError) object;
@@ -65,11 +71,14 @@ public class LoginController {
 			    }
 			}
 		} else {
-			userService.saveUser(user);
+			
+			userService.saveUser(user, role);
 			modelAndView.addObject("successMessage", "User has been registered successfully");
 			modelAndView.addObject("newUser", new User());
-			modelAndView.setViewName("registration");
-			
+			if(role.equals("user"))
+				modelAndView.setViewName("registration");
+			else
+				modelAndView.setViewName("/admin/home");
 		}
 		return modelAndView;
 	}
