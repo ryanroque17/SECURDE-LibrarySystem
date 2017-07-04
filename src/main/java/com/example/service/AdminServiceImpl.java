@@ -12,8 +12,8 @@ import com.example.model.User;
 import com.example.repository.RoleRepository;
 import com.example.repository.UserRepository;
 
-@Service("userService")
-public class UserServiceImpl implements UserService{
+@Service("adminService")
+public class AdminServiceImpl implements AdminService{
 
 	@Autowired
 	private UserRepository userRepository;
@@ -34,20 +34,25 @@ public class UserServiceImpl implements UserService{
         
         
         Role userRole = null;
-		if(role.equals("user")){
-			int idChecker = Integer.parseInt(user.getId().substring(0, 4));
-			
-			if(idChecker == 1998 || (idChecker>2000 && idChecker<3000))
-				userRole = roleRepository.findByRole("FACULTY");
-			else
-				userRole = roleRepository.findByRole("STUDENT");
-		}else if(role.equals("libraryStaff")){
+		if(role.equals("libraryStaff")){
 			userRole = roleRepository.findByRole("LIBRARY_STAFF");
 		}else if(role.equals("libraryManager")){
 			userRole = roleRepository.findByRole("LIBRARY_MANAGER");
 		}
         user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
 		userRepository.save(user);
+	}
+
+	@Override
+	public void unlockUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exportLogs() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

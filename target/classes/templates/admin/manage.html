@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Admin - Manage Accounts</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body th:background="@{/images/glass-background.jpg}"
+	style="background-size: 100%">
+	<nav class="navbar navbar-default navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">DLSU SHS Library System</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Accounts</a></li>
+					<li><a href="#">Logs</a></li>
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><b><span th:utext="${userName}"></span></b>
+							<span class="caret"></span></a>
+						<ul id="login-dp" class="dropdown-menu">
+							<li>
+								<div class="row">
+
+									<div class="bottom text-center">
+										<form th:action="@{/logout}" method="get">
+											<button class="btn btn-md btn-danger btn-block" type="Submit">Logout</button>
+										</form>
+									</div>
+								</div>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+
+
+		<div class="container">
+			<br> <br>
+			<div class="im-centered">
+				<div class="row text-center">
+					<h3>
+						<b>Hi admin! What do you want to do?<b>
+					</h3>
+				</div>
+				<br> <br>
+
+				<div class="row">
+
+					<div class="col-sm-2"></div>
+					<form id="createEmployee" th:action="@{/admin/create}" method="get">
+						<a th:href="@{/admin/create}">
+							<div class="col-sm-4">
+								<div class="thumbnail">
+									<div class="caption">
+										<h4 class="options-heading" align="center">Create Account</h4>
+
+									</div>
+									<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
+								</div>
+							</div>
+						</a>
+					</form>
+					<a href="#" class="">
+						<div class="col-sm-4">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4 class="options-heading" align="center">Unlock Account</h4>
+								</div>
+								<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
+
+							</div>
+						</div>
+					</a>
+					<div class="col-sm-2"></div>
+				</div>
+				<!--row -->
+			</div>
+			<!--im-centered-->
+		</div>
+		<!--  
+		<div class="modal fade" id="register-modal" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+					style="display: none;">
+					<div class="modal-dialog">
+						<div class="loginmodal-container">
+							<h1>Create an Employee Account</h1>
+
+
+							<form autocomplete="off"
+								th:action="@{/admin/manage/create}" th:object="${newUser}"
+								method="post" class="form-horizontal" role="form">
+								<div class="form-group">
+									<input type="radio" name="role" id="role" value="libraryStaff">
+									Library Staff<br> 
+									<input type="radio" name="role" id="role" value="libraryManager"> Library Manager<br> <br>
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+										class="validation-message"></label> <input type="text"
+										th:field="*{id}" placeholder="ID Number" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('firstName')}"
+										th:errors="*{firstName}" class="validation-message"></label> <input
+										type="text" th:field="*{firstName}" placeholder="First Name"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('middleName')}"
+										th:errors="*{middleName}" class="validation-message"></label>
+									<input type="text" th:field="*{middleName}"
+										placeholder="Middle Name" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('lastName')}"
+										th:errors="*{lastName}" class="validation-message"></label> <input
+										type="text" th:field="*{lastName}" placeholder="Last Name"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('birthday')}"
+										th:errors="*{birthday}" class="validation-message"></label> <input
+										type="text" th:field="*{birthday}" placeholder="Birthday"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<input type="text" th:field="*{email}" placeholder="Email"
+										class="form-control" /> <label
+										th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+										class="validation-message"></label>
+								</div>
+								<div class="form-group">
+									<input type="password" th:field="*{password}"
+										placeholder="Password" class="form-control" /> <label
+										th:if="${#fields.hasErrors('password')}"
+										th:errors="*{password}" class="validation-message"></label>
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('secretQuestion')}"
+										th:errors="*{secretQuestion}" class="validation-message"></label>
+									<input type="text" th:field="*{secretQuestion}"
+										placeholder="Secret Question" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('secretQuestionAnswer')}"
+										th:errors="*{secretQuestionAnswer}" class="validation-message"></label>
+									<input type="text" th:field="*{secretQuestionAnswer}"
+										placeholder="Secret Question Answer" class="form-control" />
+								</div>
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="register-submit"
+												id="register-submit" tabindex="4"
+												class="form-control btn btn-register" value="Register Now">
+										</div>
+									</div>
+								</div>
+								<span th:utext="${successMessage}"></span>
+							</form>
+						</div>
+					</div>
+				</div>
+				-->
+		<!--container-->
+		<!-- 
+		<div class="panel-group" style="margin-top: 40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span th:utext="${userName}"></span>
+				</div>
+				<a href="#" data-toggle="modal" data-target="#register-modal">Create
+					a library employee account</a>
+				
+			</div>
+		</div>
+-->
+	</div>
+</body>
+</html>

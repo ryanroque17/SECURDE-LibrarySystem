@@ -38,7 +38,7 @@ public class User {
 	@NotEmpty(message = "*Please provide your first name")
 	private String firstName;
 	@Column(name = "middle_name")
-	@NotEmpty(message = "*Please provide your midde initial")
+	@NotEmpty(message = "*Please provide your middle name")
 	private String middleName;
 	@Column(name = "last_name")
 	@NotEmpty(message = "*Please provide your last name")
