@@ -32,9 +32,16 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-				}else if(authority.getAuthority().equals("LIBRARY_STAFF") || authority.getAuthority().equals("LIBRARY_MANAGER")){
+				}else if(authority.getAuthority().equals("LIBRARY_STAFF")){
 					try {
-						redirectStrategy.sendRedirect(arg0, arg1, "/employee/home");
+						redirectStrategy.sendRedirect(arg0, arg1, "/employee/staff/home");
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}else if(authority.getAuthority().equals("LIBRARY_MANAGER")){
+					try {
+						redirectStrategy.sendRedirect(arg0, arg1, "/employee/manager/home");
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

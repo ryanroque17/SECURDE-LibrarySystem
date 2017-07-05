@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-@Table(name = "reading_material")
+@Table(name = "room")
 public class Room {
 	@Id
 	@Column(name = "room_id")

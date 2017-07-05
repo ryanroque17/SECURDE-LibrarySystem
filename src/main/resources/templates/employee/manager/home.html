@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Manager - Home</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body th:background="@{/images/glass-background.jpg}"
+	style="background-size: 100%">
+	<nav class="navbar navbar-default navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">DLSU SHS Library System</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a th:href="@{/employee/manager/home}">Home</a></li>
+					<li><a th:href="@{/employee/manager/manage}">Reading Materials</a></li>
+					<li><a th:href="@{/employee/manager/manage}">Room Reservations</a></li>
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><b><span th:utext="${userName}"></span></b>
+							<span class="caret"></span></a>
+						<ul id="login-dp" class="dropdown-menu">
+							<li>
+								<div class="row">
+
+									<div class="bottom text-center">
+										<form th:action="@{/logout}" method="get">
+											<button class="btn btn-md btn-danger btn-block" type="Submit">Logout</button>
+										</form>
+									</div>
+								</div>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<div class="container">
+			<br> <br>
+			<div class="im-centered">
+				<div class="row text-center">
+					<h3>
+						<b>Hi manager! What do you want to do?<b>
+					</h3>
+				</div>
+				<br> <br>
+
+				<div class="row">
+
+					<div class="col-sm-2"></div>
+					<form id="registerButton" th:action="@{/employee/manager/manage}" method="get">
+						<a th:href="@{/employee/manager/manage}">
+							<div class="col-sm-4">
+								<div class="thumbnail">
+									<div class="caption">
+										<h4 class="options-heading" align="center">Manage
+											Reading Materials</h4>
+									</div>
+									<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
+								</div>
+							</div>
+						</a>
+					</form>
+					<a href="#" class="">
+						<div class="col-sm-4">
+							<div class="thumbnail">
+								<div class="caption">
+									<h4 class="options-heading" align="center">Override Existing Room Reservations</h4>
+								</div>
+								<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
+
+							</div>
+						</div>
+					</a>
+					<div class="col-sm-2"></div>
+				</div>
+				<!--row -->
+			</div>
+			<!--im-centered-->
+		</div>
+		<!--container-->
+
+
+	</div>
+</body>
+</html>

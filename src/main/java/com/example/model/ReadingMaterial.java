@@ -2,6 +2,8 @@ package com.example.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,15 +17,18 @@ import org.springframework.data.annotation.Transient;
 @Table(name = "reading_material")
 public class ReadingMaterial {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "reading_material_id")
-	@NotEmpty(message = "*Please provide the reading material ID")
-	private String readingMaterialId;
+	private int readingMaterialId;
+	@Column(name = "dewey_decimal")
+	@NotEmpty(message = "*Please provide the Dewey Decimal classification")
+	private String deweyDecimal;
 	@Column(name = "title")
 	@NotEmpty(message = "*Please provide the title")
 	private String title;
 	@Column(name = "author")
 	@NotEmpty(message = "*Please provide the author")
-	private String password;
+	private String author;
 	@Column(name = "year")
 	@NotEmpty(message = "*Please provide the year")
 	private String year;
@@ -34,17 +39,25 @@ public class ReadingMaterial {
 	@NotEmpty(message = "*Please provide the tags")
 	private String tags;
 	@Column(name = "status")
-	@NotEmpty(message = "*Please provide the status")
 	private String status;
 	@Column(name = "publisher")
 	@NotEmpty(message = "*Please provide the publisher")
 	private String publisher;
+	@Column(name = "type")
+	private String type;
 	
-	public String getReadingMaterialId() {
+
+	public int getReadingMaterialId() {
 		return readingMaterialId;
 	}
-	public void setReadingMaterialId(String readingMaterialId) {
+	public void setReadingMaterialId(int readingMaterialId) {
 		this.readingMaterialId = readingMaterialId;
+	}
+	public String getDeweyDecimal() {
+		return deweyDecimal;
+	}
+	public void setDeweyDecimal(String deweyDecimal) {
+		this.deweyDecimal = deweyDecimal;
 	}
 	public String getTitle() {
 		return title;
@@ -52,11 +65,11 @@ public class ReadingMaterial {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getPassword() {
-		return password;
+	public String getAuthor() {
+		return author;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	public String getYear() {
 		return year;
@@ -88,4 +101,11 @@ public class ReadingMaterial {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 }

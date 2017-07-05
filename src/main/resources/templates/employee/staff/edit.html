@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Staff - Edit Reading Material</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script th:src="@{/js/login.js}"></script>
+<script>
+	$('select[name="listReadingMaterials"]').change(function() {
+
+	});
+</script>
+
+<style>
+.validation-message {
+	color: #FF1C19
+}
+</style>
+</head>
+<body th:background="@{/images/glass-background.jpg}"
+	style="background-size: 100%">
+	<nav class="navbar navbar-default navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">DLSU SHS Library System</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/employee/staff/home}">Home</a></li>
+					<li class="active"><a th:href="@{/employee/staff/manage}">Reading Materials</a></li>
+					<li><a th:href="@{/employee/staff/manage}">Room Reservations</a></li>
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><b><span th:utext="${userName}"></span></b>
+							<span class="caret"></span></a>
+						<ul id="login-dp" class="dropdown-menu">
+							<li>
+								<div class="row">
+
+									<div class="bottom text-center">
+										<form th:action="@{/logout}" method="get">
+											<button class="btn btn-md btn-danger btn-block" type="Submit">Logout</button>
+										</form>
+									</div>
+								</div>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-login"
+					style="background: rgba(0, 0, 0, 0.8)">
+					<div class="row">
+						<div class="col-xs-12" align="center" style="color: white">
+							<h2>Register</h2>
+						</div>
+					</div>
+					<hr>
+					<div class="panel-body">
+						<div class="col-lg-12">
+							<form autocomplete="off" action="#"
+								th:action="@{/employee/staff/edit}"
+								th:object="${newReadingMaterial}" method="post"
+								class="form-horizontal" role="form">
+
+								<div class="form-group">
+									<label for="sel1" style="color: white">Select the
+										reading material:</label> <select th:field="*{readingMaterialId}"
+										name="listReadingMaterials" class="form-control">
+										<option th:each="item : ${listReadingMaterials}"
+											th:text="${item.title} + ' - ' + ${item.author} + ' - ' + ${item.year}"
+											th:value="${item.readingMaterialId}"></option>
+
+									</select>
+								</div>
+								<input id="type" type="hidden" th:field="*{type}"
+									class="form-control" value="book"
+									th:value="${newReadingMaterial.type}" /> 
+								<input id="status"
+									type="hidden" th:field="*{status}" class="form-control"
+									value="available" th:value="${newReadingMaterial.status} " />
+
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('deweyDecimal')}"
+										th:errors="*{deweyDecimal}" class="validation-message"></label>
+									<input type="text" th:field="*{deweyDecimal}"
+										placeholder="Dewey Decimal System ID" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('title')}"
+										th:errors="*{title}" class="validation-message"></label> <input
+										id="title" type="text" th:field="*{title}" placeholder="Title"
+										class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('author')}"
+										th:errors="*{author}" class="validation-message"></label> <input
+										id="author" type="text" th:field="*{author}"
+										placeholder="Author" class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('publisher')}"
+										th:errors="*{publisher}" class="validation-message"></label> <input
+										id="publisher" type="text" th:field="*{publisher}"
+										placeholder="Publisher" class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
+										class="validation-message"></label> <input type="text"
+										id="year" th:field="*{year}" placeholder="Year Published"
+										class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('description')}"
+										th:errors="*{description}" class="validation-message"></label>
+									<input id="description" type="text" th:field="*{description}"
+										placeholder="Description" class="form-control" />
+								</div>
+								<div class="form-group">
+									<label th:if="${#fields.hasErrors('tags')}" th:errors="*{tags}"
+										class="validation-message"></label> <input type="text"
+										id="tags" th:field="*{tags}" placeholder="Tags"
+										class="form-control" />
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 col-sm-offset-3">
+											<input type="submit" name="register-submit"
+												id="register-submit" tabindex="4"
+												class="form-control btn btn-register" value="Submit"
+												style="background-color: #116341; color: white">
+										</div>
+									</div>
+								</div>
+
+								<span th:utext="${successMessage}"></span>
+
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

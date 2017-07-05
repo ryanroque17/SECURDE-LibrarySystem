@@ -96,10 +96,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/").permitAll()
 			.antMatchers("/login").permitAll()
 			.antMatchers("/registration").permitAll()
-			.antMatchers("/library/**").hasAuthority("LIBRARY_MANAGER").anyRequest()
+			.antMatchers("/employee/manager/**").hasAuthority("LIBRARY_MANAGER").anyRequest()
 			.authenticated().and().csrf().disable().formLogin()
 			.loginPage("/login").failureUrl("/login?error=true")
-			.defaultSuccessUrl("/library/home")
+			.defaultSuccessUrl("/employee/manager/home")
 			.usernameParameter("email")
 			.passwordParameter("password")
 			.and().logout()
@@ -111,21 +111,32 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.antMatchers("/").permitAll()
 			.antMatchers("/login").permitAll()
 			.antMatchers("/registration").permitAll()
-			.antMatchers("/library/**").hasAuthority("LIBRARY_STAFF").anyRequest()
+			.antMatchers("/employee/staff/**").hasAuthority("LIBRARY_STAFF").anyRequest()
 			.authenticated().and().csrf().disable().formLogin()
 			.loginPage("/login").failureUrl("/login?error=true")
-			.defaultSuccessUrl("/library/home")
+			.defaultSuccessUrl("/employee/staff/home")
 			.usernameParameter("email")
 			.passwordParameter("password")
 			.and().logout()
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 			.logoutSuccessUrl("/").and().exceptionHandling()
 			.accessDeniedPage("/access-denied");
-		http.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/login")).and().authorizeRequests()
-		.antMatchers("/user").hasRole("USER")
+		http.
+		csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/login")).and().
+		authorizeRequests()
+		.antMatchers("/user").hasRole("STUDENT")
+		.antMatchers("/user").hasRole("FACULTY")
+		.antMatchers("/employee/staff").hasRole("LIBRARY_STAFF")
+		.antMatchers("/employee/manager").hasRole("LIBRARY_MANAGER")
 		.antMatchers("/admin").hasRole("ADMIN")
 		.and().formLogin().successHandler(successHandler)
 		.loginPage("/login").and().logout().permitAll();
+/*		http.
+		authorizeRequests()
+		.antMatchers("/user/**").access("hasRole('STUDENT') or hasRole('FACULTY')")
+		.antMatchers("/employee/manager/**").access("hasRole('LIBRARY_MANAGER')")
+		.antMatchers("/employee/staff/**").access("hasRole('LIBRARY_STAFF')")
+		.antMatchers("/admin/**").access("hasRole('ADMIN')");*/
 	}
 	
 	@Override
