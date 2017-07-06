@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.ArrayList;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.model.ReadingMaterial;
 import com.example.model.User;
 import com.example.service.AdminService;
 
@@ -71,6 +74,31 @@ public class AdminController {
 			modelAndView.addObject("newUser", new User());
 			modelAndView.setViewName("/admin/create");
 		}
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/admin/unlock", method = RequestMethod.GET)
+	public ModelAndView unlockAccount(){
+		ModelAndView modelAndView = new ModelAndView();
+		ArrayList<User> user = adminService.getAllInactiveUsers();
+		System.out.println("inactive: " +user.size());
+		modelAndView.addObject("inactiveUsers", user);
+		modelAndView.setViewName("/admin/unlock");
+		
+		return modelAndView;
+	}
+	@RequestMapping(value = "/admin/unlock", method = RequestMethod.POST)
+	public ModelAndView saveEditReadingMaterial(@RequestParam("inactiveId") String userId) {
+		ModelAndView modelAndView = new ModelAndView();
+		
+			User user = adminService.findUserById(userId);
+			adminService.unlockUser(user);
+			ArrayList<User> inactiveUsers = adminService.getAllInactiveUsers();
+
+			modelAndView.addObject("successMessage", "A user has been unlocked");
+			modelAndView.addObject("inactiveUsers", inactiveUsers);
+			modelAndView.setViewName("/admin/unlock");
+		
 		return modelAndView;
 	}
 }

@@ -19,7 +19,7 @@ public class ReadingMaterialReservation {
 	@Column(name = "user_id")
 	private String userId;
 	@Column(name = "reading_material_id")
-	private String readingMaterialId;
+	private int readingMaterialId;
 	@Column(name = "reservation_date")
 	@NotEmpty(message = "*Please provide the reservation date")
 	private String reservationDate;
@@ -39,10 +39,10 @@ public class ReadingMaterialReservation {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getReadingMaterialId() {
+	public int getReadingMaterialId() {
 		return readingMaterialId;
 	}
-	public void setReadingMaterialId(String readingMaterialId) {
+	public void setReadingMaterialId(int readingMaterialId) {
 		this.readingMaterialId = readingMaterialId;
 	}
 	public String getReservationDate() {

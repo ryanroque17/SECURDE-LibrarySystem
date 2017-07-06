@@ -1,5 +1,6 @@
 package com.example.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -45,14 +46,24 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public void unlockUser(User user) {
-		// TODO Auto-generated method stub
-		
+		user.setActive(1);
+		userRepository.save(user);
 	}
 
 	@Override
 	public void exportLogs() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public ArrayList<User> getAllInactiveUsers() {
+		return userRepository.findByActive(0);
+	}
+
+	@Override
+	public User findUserById(String id) {
+		return userRepository.findById(id);
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.ArrayList;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.model.ReadingMaterial;
 import com.example.model.User;
 import com.example.service.UserService;
 
@@ -102,6 +105,9 @@ public class LoginController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
 		User user = userService.findUserByEmail(auth.getName());
+		ArrayList<ReadingMaterial> listReadingMaterials = userService.getAllReadingMaterials();
+		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
+		modelAndView.addObject("userId", user.getId());
 		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");
 		modelAndView.setViewName("library/home");

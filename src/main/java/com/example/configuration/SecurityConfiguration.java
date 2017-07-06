@@ -124,8 +124,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.
 		csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/login")).and().
 		authorizeRequests()
-		.antMatchers("/user").hasRole("STUDENT")
-		.antMatchers("/user").hasRole("FACULTY")
+		.antMatchers("/library").hasRole("STUDENT")
+		.antMatchers("/library").hasRole("FACULTY")
 		.antMatchers("/employee/staff").hasRole("LIBRARY_STAFF")
 		.antMatchers("/employee/manager").hasRole("LIBRARY_MANAGER")
 		.antMatchers("/admin").hasRole("ADMIN")

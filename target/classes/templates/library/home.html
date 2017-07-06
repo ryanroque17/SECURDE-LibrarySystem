@@ -19,27 +19,56 @@
 	src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script th:src="@{/js/home.js}"></script>
 <script>
-	/* Custom filtering function which will search data in column four between two values */
-	$.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-		var min = parseInt($('#min').val(), 10);
-		var max = parseInt($('#max').val(), 10);
-		var age = parseFloat(data[3]) || 0; // use data for the age column
+	$(document)
+			.ready(
+					function() {
+						var table = $('#example').DataTable();
 
-		if ((isNaN(min) && isNaN(max)) || (isNaN(min) && age <= max)
-				|| (min <= age && isNaN(max)) || (min <= age && age <= max)) {
-			return true;
-		}
-		return false;
-	});
+						/* 	if (document.getElementById('isAgeSelected').checked) {
+								$("#txtAge").show();
+							} else {
+								$("#txtAge").hide();
+							}
+							// Event listener to the two range filtering inputs to redraw on input
+							$('#min, #max').keyup(function() {
+								table.draw();
+							}); */
+						$('input[type="checkbox"]')
+								.click(
+										function() {
+											var isBook = document
+													.getElementById('bookCheckbox').checked;
+											var isMagazine = document
+													.getElementById('magazineCheckbox').checked;
+											var isThesis = document
+													.getElementById('thesisCheckbox').checked;
 
-	$(document).ready(function() {
-		var table = $('#example').DataTable();
-
-		// Event listener to the two range filtering inputs to redraw on input
-		$('#min, #max').keyup(function() {
-			table.draw();
-		});
-	});
+											var filteredData = table
+													.column(0)
+													.data()
+													.filter(
+															function(value,
+																	index) {
+																if (isBook
+																		&& !isThesis
+																		&& !isMagazine)
+																	return value = book ? true
+																			: false;
+																/* else if(isBook && isThesis && !isMagazine)
+																	return (value = book || value = thesis) ? true:false;
+																else if(isBook && isMagazine && !isThesis)
+																	return (value = book || value = magazine) ? true:false;
+																else if(isBook && isMagazine && isThesis)
+																	return (value = book || value = magazine || value = thesis) ? true:false;
+																else if(isThesis && !isMagazine && !isBook)
+																	return (value = thesis) ? true:false;
+																else if(isThesis && isMagazine && !isBook)
+																	return (value = thesis || value = magazine) ? true:false;
+																else if(isMagazine && !isThesis && !isBook)
+																	return (value = magazine) ? true:false;  */
+															});
+										});
+					});
 </script>
 
 </head>
@@ -91,43 +120,72 @@
 		<!-- /.container-fluid -->
 	</nav>
 	<div class="container">
-		<table border="0" cellspacing="5" cellpadding="5">
-			<tbody>
-				<tr>
-					<td>Minimum age:</td>
-					<td><input type="text" id="min" name="min"></td>
-				</tr>
-				<tr>
-					<td>Maximum age:</td>
-					<td><input type="text" id="max" name="max"></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="row">
+			<!-- <h3>Categories:</h3>
+			<label class="checkbox-inline"><input id="bookCheckbox"
+				name="bookCheckbox" type="checkbox" value="book">Books</label> <label
+				class="checkbox-inline"><input id="magazineCheckbox"
+				name="magazineCheckbox" type="checkbox" value="magzine">Magazines</label>
+			<label class="checkbox-inline"><input id="thesisCheckbox"
+				name="thesisCheckbox" type="checkbox" value="thesis">Thesis</label> -->
+		</div>
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
 				<tr>
+					<th>Category</th>
 					<th>Author</th>
 					<th>Title</th>
 					<th>Publisher</th>
 					<th>Year</th>
 					<th>Status</th>
 					<th>Date of Availability</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tfoot>
 
 			</tfoot>
 			<tbody>
-				<tr>
-					<td>Ryan Roque</td>
-					<td>Pogi ako</td>
-					<td>Pogi ako</td>
-					<td>Pogi ako</td>
-					<td>Pogi ako</td>
-					<td>Pogi ako</td>
+				<option th:each="item : ${listReadingMaterials}"
+					th:text="${item.title} + ' - ' + ${item.author} + ' - ' + ${item.year}"
+					th:value="${item.readingMaterialId}"></option>
+				<tr th:each="item : ${listReadingMaterials}">
+					<td th:text="${item.type}"></td>
+					<td th:text="${item.author}"></td>
+					<td th:text="${item.title}"></td>
+					<td th:text="${item.publisher}"></td>
+					<td th:text="${item.year}"></td>
+					<td th:text="${item.status}"></td>
+					<td>Available</td>
+					<td><div class="form-group">
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="text-center">
+										<form id="login-form" th:action="@{/library/reserve}" method="get"
+											role="form" style="display: block;">
+											<div class="form-group">
+												<input type="hidden" id="idReserve" name="idReserve"
+													th:value="${item.readingMaterialId}"></input>
+											</div>
+											<div class="form-group">
+												<input type="hidden" id="idUser" name="idUser"
+													th:value="${userId}"></input>
+											</div>
+											<div class="form-group">
+												<div class="row">
+														<input type="submit"
+															tabindex="4" class="form-control btn btn-login"
+															value="Reserve"
+															style="background-color: #116341; color: white">
+												</div>
+											</div>
+										</form>
 
+									</div>
+								</div>
+							</div>
+						</div></td>
 				</tr>
-
 			</tbody>
 		</table>
 		<!-- <div class="row">
