@@ -146,9 +146,7 @@
 
 			</tfoot>
 			<tbody>
-				<option th:each="item : ${listReadingMaterials}"
-					th:text="${item.title} + ' - ' + ${item.author} + ' - ' + ${item.year}"
-					th:value="${item.readingMaterialId}"></option>
+				
 				<tr th:each="item : ${listReadingMaterials}">
 					<td th:text="${item.type}"></td>
 					<td th:text="${item.author}"></td>
