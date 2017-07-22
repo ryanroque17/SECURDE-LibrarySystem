@@ -1,3 +1,4 @@
+
 package com.example.controller;
 
 import java.util.ArrayList;
@@ -5,6 +6,8 @@ import java.util.ArrayList;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -18,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.model.Review;
+import com.example.model.User;
 import com.example.service.UserService;
 
 @Controller
@@ -88,6 +92,21 @@ public class UserController {
 
 		modelAndView.setViewName("/library/review");
 
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/library/room", method = RequestMethod.GET)
+	public ModelAndView libraryRoom(){
+		ModelAndView modelAndView = new ModelAndView();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		
+		User user = userService.findUserByEmail(auth.getName());
+		ArrayList<ReadingMaterial> listReadingMaterials = userService.getAllReadingMaterials();
+		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
+		modelAndView.addObject("userId", user.getId());
+		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");
+		modelAndView.setViewName("library/room");
 		return modelAndView;
 	}
 }

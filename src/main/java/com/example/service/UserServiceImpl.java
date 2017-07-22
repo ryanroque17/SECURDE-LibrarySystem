@@ -12,11 +12,13 @@ import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.model.Review;
 import com.example.model.Role;
+import com.example.model.Room;
 import com.example.model.User;
 import com.example.repository.ReadingMaterialRepository;
 import com.example.repository.ReadingMaterialReservationRepository;
 import com.example.repository.ReviewRepository;
 import com.example.repository.RoleRepository;
+import com.example.repository.RoomRepository;
 import com.example.repository.UserRepository;
 
 @Service("userService")
@@ -34,6 +36,8 @@ public class UserServiceImpl implements UserService{
 	private ReadingMaterialReservationRepository readingMaterialReservationRepository;
 	@Autowired
     private ReviewRepository reviewRepository;
+	@Autowired
+    private RoomRepository roomRepository;
 	
 	@Override
 	public User findUserByEmail(String email) {
@@ -66,6 +70,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public ArrayList<ReadingMaterial> getAllReadingMaterials() {
 		ArrayList<ReadingMaterial> listReadingMaterials = (ArrayList<ReadingMaterial>) readingMaterialRepository.findAll();
+		return listReadingMaterials;		
+	}
+	@Override
+	public ArrayList<Room> getAllRooms() {
+		ArrayList<Room> listReadingMaterials = (ArrayList<Room>) roomRepository.findAll();
 		return listReadingMaterials;		
 	}
 

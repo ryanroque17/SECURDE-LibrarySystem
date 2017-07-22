@@ -14,20 +14,20 @@ public class Room {
 	@Column(name = "room_id")
 	@NotEmpty(message = "*Please provide the room ID")
 	private String roomId;
-	@Column(name = "is_available")
-	@NotEmpty(message = "*Please provide the room ID")
-	private String isAvailable;
+	@Column(name = "room_name")
+	@NotEmpty(message = "*Please provide the room name")
+	private String roomName;
 	public String getRoomId() {
 		return roomId;
 	}
 	public void setRoomId(String roomId) {
 		this.roomId = roomId;
 	}
-	public String getIsAvailable() {
-		return isAvailable;
+	public String getRoomName() {
+		return roomName;
 	}
-	public void setIsAvailable(String isAvailable) {
-		this.isAvailable = isAvailable;
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
 	}
 	
 	

@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>Home</title>
+<title>Room</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,59 +18,6 @@
 <script
 	src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script th:src="@{/js/home.js}"></script>
-<script>
-	$(document)
-			.ready(
-					function() {
-						var table = $('#example').DataTable();
-
-						/* 	if (document.getElementById('isAgeSelected').checked) {
-								$("#txtAge").show();
-							} else {
-								$("#txtAge").hide();
-							}
-							// Event listener to the two range filtering inputs to redraw on input
-							$('#min, #max').keyup(function() {
-								table.draw();
-							}); */
-						$('input[type="checkbox"]')
-								.click(
-										function() {
-											var isBook = document
-													.getElementById('bookCheckbox').checked;
-											var isMagazine = document
-													.getElementById('magazineCheckbox').checked;
-											var isThesis = document
-													.getElementById('thesisCheckbox').checked;
-
-											var filteredData = table
-													.column(0)
-													.data()
-													.filter(
-															function(value,
-																	index) {
-																if (isBook
-																		&& !isThesis
-																		&& !isMagazine)
-																	return value = book ? true
-																			: false;
-																/* else if(isBook && isThesis && !isMagazine)
-																	return (value = book || value = thesis) ? true:false;
-																else if(isBook && isMagazine && !isThesis)
-																	return (value = book || value = magazine) ? true:false;
-																else if(isBook && isMagazine && isThesis)
-																	return (value = book || value = magazine || value = thesis) ? true:false;
-																else if(isThesis && !isMagazine && !isBook)
-																	return (value = thesis) ? true:false;
-																else if(isThesis && isMagazine && !isBook)
-																	return (value = thesis || value = magazine) ? true:false;
-																else if(isMagazine && !isThesis && !isBook)
-																	return (value = magazine) ? true:false;  */
-															});
-										});
-					});
-</script>
-
 </head>
 
 <body>
@@ -92,8 +39,8 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a th:href="@{/library/home}">Borrow</a></li>
-					<li><a th:href="@{/library/room}">Room</a></li>
+					<li><a th:href="@{/library/home}">Borrow</a></li>
+					<li class="active"><a th:href="@{/library/room}">Room</a></li>
 
 				</ul>
 
@@ -132,14 +79,8 @@
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>Category</th>
-					<th>Author</th>
-					<th>Title</th>
-					<th>Publisher</th>
-					<th>Year</th>
-					<th>Status</th>
-					<th>Date of Availability</th>
-					<th></th>
+					<th>Rooms</th>
+					<th>Room Name</th>
 				</tr>
 			</thead>
 			<tfoot>

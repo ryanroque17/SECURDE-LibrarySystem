@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -23,7 +24,8 @@ public class ManagerController {
 
 	@Autowired
 	ManagerService managerService;
-
+	
+	@Secured("LIBRARY_MANAGER")
 	@RequestMapping(value = "/employee/manager/manage", method = RequestMethod.GET)
 	public ModelAndView manageReadingMaterials() {
 		ModelAndView modelAndView = new ModelAndView();
