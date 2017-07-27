@@ -13,12 +13,14 @@ import com.example.model.ReadingMaterialReservation;
 import com.example.model.Review;
 import com.example.model.Role;
 import com.example.model.Room;
+import com.example.model.RoomReservation;
 import com.example.model.User;
 import com.example.repository.ReadingMaterialRepository;
 import com.example.repository.ReadingMaterialReservationRepository;
 import com.example.repository.ReviewRepository;
 import com.example.repository.RoleRepository;
 import com.example.repository.RoomRepository;
+import com.example.repository.RoomReservationRepository;
 import com.example.repository.UserRepository;
 
 @Service("userService")
@@ -38,6 +40,8 @@ public class UserServiceImpl implements UserService{
     private ReviewRepository reviewRepository;
 	@Autowired
     private RoomRepository roomRepository;
+	@Autowired
+    private RoomReservationRepository roomReservationRepository;
 	
 	@Override
 	public User findUserByEmail(String email) {
@@ -74,8 +78,8 @@ public class UserServiceImpl implements UserService{
 	}
 	@Override
 	public ArrayList<Room> getAllRooms() {
-		ArrayList<Room> listReadingMaterials = (ArrayList<Room>) roomRepository.findAll();
-		return listReadingMaterials;		
+		ArrayList<Room> rooms = (ArrayList<Room>) roomRepository.findAll();
+		return rooms;		
 	}
 
 	@Override
@@ -92,6 +96,41 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void addReview(Review review) {
 		reviewRepository.save(review);
+	}
+
+	@Override
+	public void reserveRoom(RoomReservation roomReservation) {
+		roomReservationRepository.save(roomReservation);
+		
+	}
+
+	@Override
+	public ArrayList<RoomReservation> getAllRoomReservationByDateAndRoomId(String date, String roomId) {
+		ArrayList<RoomReservation> listRoomReservation = (ArrayList<RoomReservation>) roomReservationRepository.findAll();
+		ArrayList<RoomReservation> roomReservations = new ArrayList<RoomReservation>();
+		date = date.replace("/", "-");
+		for(int i =0; i< listRoomReservation.size(); i++) 
+		{
+			System.out.println("AAA "  +i);
+			System.out.println(date + " " + listRoomReservation.get(i).getDate());
+			if(listRoomReservation.get(i).getDate().equals(date) && listRoomReservation.get(i).getRoomId().equals(roomId)){
+				System.out.println(i);
+				roomReservations.add(listRoomReservation.get(i));
+			}
+		}
+			
+				
+		
+		return roomReservations;
+	}
+
+	@Override
+	public Room getRoomById(String roomId) {
+		ArrayList<Room> rooms = this.getAllRooms();
+		for(int i =0; i< rooms.size(); i++)
+			if(rooms.get(i).getRoomId().equals(roomId))
+				return rooms.get(i);
+		return null;
 	}
 	
 }

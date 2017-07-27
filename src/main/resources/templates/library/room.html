@@ -4,7 +4,7 @@
 
 <head>
 <title>Room</title>
-<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/room.css}" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -17,9 +17,26 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script
 	src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-<script th:src="@{/js/home.js}"></script>
-</head>
+<script th:src="@{/js/room.js}"></script>
 
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var date_input=$('input[name="date"]'); //our date input has the name "date"
+  var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+  var options={
+    format: 'yyyy/mm/dd',
+    container: container,
+    todayHighlight: true,
+    autoclose: true,
+  };
+  date_input.datepicker(options);
+})
+</script>
+</head>
 <body>
 
 	<nav class="navbar navbar-default navbar-inverse" role="navigation">
@@ -66,67 +83,76 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
+	  
 	<div class="container">
 		<div class="row">
-			<!-- <h3>Categories:</h3>
-			<label class="checkbox-inline"><input id="bookCheckbox"
-				name="bookCheckbox" type="checkbox" value="book">Books</label> <label
-				class="checkbox-inline"><input id="magazineCheckbox"
-				name="magazineCheckbox" type="checkbox" value="magzine">Magazines</label>
-			<label class="checkbox-inline"><input id="thesisCheckbox"
-				name="thesisCheckbox" type="checkbox" value="thesis">Thesis</label> -->
+			<form autocomplete="off" action="#"
+			th:action="@{/library/room/}"
+			th:object="${date}" method="post"
+			class="form-horizontal" role="form">
+				<p class = "room">Date: 
+					<input class="form-control" th:value="${date}" id="date" name="date" placeholder="YYYY/MM/DD" type="text"/>
+					Room: 
+					<select id="roomId" name="roomId">
+						<option value = "1">Room 1</option>
+						<option value = "2">Room 2</option>
+						<option value = "3">Room 3</option>
+						<option value = "4">Room 4</option>
+						<option value = "5">Room 5</option>
+						
+					</select>
+					<input type="submit" value="Submit">
+				</p>
+			</form>
 		</div>
+		
 		<table id="example" class="display" cellspacing="0" width="100%">
 			<thead>
 				<tr>
-					<th>Rooms</th>
-					<th>Room Name</th>
+					<th class = "room">Room Name</th>
 				</tr>
 			</thead>
-			<tfoot>
-
-			</tfoot>
-			<tbody>
-				
-				<tr th:each="item : ${listReadingMaterials}">
-					<td th:text="${item.type}"></td>
-					<td th:text="${item.author}"></td>
-					<td th:text="${item.title}"></td>
-					<td th:text="${item.publisher}"></td>
-					<td th:text="${item.year}"></td>
-					<td th:text="${item.status}"></td>
-					<td>Available</td>
-					<td><div class="form-group">
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="text-center">
-										<form id="login-form" th:action="@{/library/reserve}" method="get"
-											role="form" style="display: block;">
-											<div class="form-group">
-												<input type="hidden" id="idReserve" name="idReserve"
-													th:value="${item.readingMaterialId}"></input>
-											</div>
-											<div class="form-group">
-												<input type="hidden" id="idUser" name="idUser"
-													th:value="${userId}"></input>
-											</div>
-											<div class="form-group">
-												<div class="row">
-														<input type="submit"
-															tabindex="4" class="form-control btn btn-login"
-															value="Reserve"
-															style="background-color: #116341; color: white">
-												</div>
-											</div>
-										</form>
-
-									</div>
-								</div>
-							</div>
-						</div></td>
+			
+			<tbody>	
+				<tr>
+					<td class="room" th:text="${room.roomName}"></td>
+					<td>
+						<form autocomplete="off" action="#"
+						th:action="@{/library/room/reserve}" method="post"
+						class="form-horizontal" role="form">
+							<input class="form-control" th:value="${room.roomId}" name="roomId" type="hidden"/>
+							<input class="form-control" th:value="${userId}" name="userId" type="hidden"/>
+							<input class="form-control" th:value="${date}" name="date" type="hidden"/>
+							
+							<button id = "t1" type="submit" value="6:00 - 8:00" name ="time">6:00 - 8:00</button>
+							<button id = "t2" type="submit" value="8:00 - 10:00" name ="time">8:00 - 10:00</button>
+							<button id = "t3" type="submit" value="10:00 - 12:00" name ="time">10:00 - 12:00</button>
+							<button id = "t4" type="submit" value="12:00 - 14:00" name ="time">12:00 - 14:00</button>
+							<button id = "t5" type="submit" value="14:00 - 16:00" name ="time">14:00 - 16:00</button>
+							<button id = "t6" type="submit" value="16:00 - 18:00" name ="time">16:00 - 18:00</button>
+							<script th:inline="javascript">
+								var roomReservations = [[${roomReservations}]];
+								for(var i =0; i< roomReservations.length; i++) {
+									console.log(i);
+									switch(roomReservations[i].startTime) {
+											case "6:00":  $("#t1").attr("disabled", true).css("color", "red"); break;
+											case "8:00":  $("#t2").attr("disabled", true).css("color", "red"); break;
+											case "10:00":  $("#t3").attr("disabled", true).css("color", "red"); break;
+											case "12:00":  $("#t4").attr("disabled", true).css("color", "red"); break;
+											case "14:00":  $("#t5").attr("disabled", true).css("color", "red"); break;
+											case "16:00":  $("#t6").attr("disabled", true).css("color", "red"); break;
+									}
+								}		
+							</script>		
+						</form>
+					
+					</td>
+					
 				</tr>
 			</tbody>
 		</table>
+		
+		
 		<!-- <div class="row">
 		
 				<div class="col-md-6">

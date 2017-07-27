@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -103,7 +102,6 @@ public class LoginController {
 	public ModelAndView libraryHome(){
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		
 		User user = userService.findUserByEmail(auth.getName());
 		ArrayList<ReadingMaterial> listReadingMaterials = userService.getAllReadingMaterials();
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);

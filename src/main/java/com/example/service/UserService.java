@@ -6,14 +6,18 @@ import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.model.Review;
 import com.example.model.Room;
+import com.example.model.RoomReservation;
 import com.example.model.User;
 
 public interface UserService {
 	public ReadingMaterial findReadingMaterialById(int id);
 	public User findUserByEmail(String email);
 	public void saveUser(User user, String role);
+	public void reserveRoom(RoomReservation roomReservation);
 	public void reserveReadingMaterial(ReadingMaterial readingMaterial, ReadingMaterialReservation readingMaterialReservation);
+	public ArrayList<RoomReservation> getAllRoomReservationByDateAndRoomId(String date, String roomId);
 	public ArrayList<ReadingMaterial> getAllReadingMaterials();
+	public Room getRoomById(String roomId);
 	public ArrayList<Room> getAllRooms();
 	public void addReview(Review review);
 

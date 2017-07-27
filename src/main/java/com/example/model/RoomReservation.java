@@ -16,16 +16,27 @@ public class RoomReservation {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "room_reservation_id")
 	private String roomReservationId;
-	@Column(name = "user_id")
-	private String userId;
 	@Column(name = "room_id")
 	private String roomId;
-	@Column(name = "start_date_time")
-	@NotEmpty(message = "*Please provide the start date and time")
-	private String startDateTime;
-	@Column(name = "end_date_time")
-	@NotEmpty(message = "*Please provide the end date and time")
-	private String endDateTime;
+	@Column(name = "user_id")
+	private String userId;
+	@Column(name = "date")
+	@NotEmpty(message = "*Please provide the date")
+	private String date;
+	@Column(name = "start_time")
+	@NotEmpty(message = "*Please provide the start time")
+	private String startTime;
+	@Column(name = "end_time")
+	@NotEmpty(message = "*Please provide the end time")
+	private String endTime;
+	
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
 	public String getRoomReservationId() {
 		return roomReservationId;
 	}
@@ -44,17 +55,17 @@ public class RoomReservation {
 	public void setRoomId(String roomId) {
 		this.roomId = roomId;
 	}
-	public String getStartDateTime() {
-		return startDateTime;
+	public String getStartTime() {
+		return startTime;
 	}
-	public void setStartDateTime(String startDateTime) {
-		this.startDateTime = startDateTime;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
-	public String getEndDateTime() {
-		return endDateTime;
+	public String getEndTime() {
+		return endTime;
 	}
-	public void setEndDateTime(String endDateTime) {
-		this.endDateTime = endDateTime;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	
 }
