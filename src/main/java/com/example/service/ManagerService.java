@@ -12,7 +12,8 @@ public interface ManagerService {
 	public void saveReadingMaterial(ReadingMaterial readingMaterial);
 	public void editReadingMaterial(ReadingMaterial readingMaterial);
 	public void deleteReadingMaterial(int i);
-	public void overrideReservation(ReadingMaterialReservation readingMaterialReservation);
+	public void overrideReservation(String readingMaterialReservation);
 	public ArrayList<ReadingMaterial> getAllReadingMaterials();
+	public ArrayList<ReadingMaterialReservation> getAllReadingMaterialReservation();
 	public void exportLogs();
 }

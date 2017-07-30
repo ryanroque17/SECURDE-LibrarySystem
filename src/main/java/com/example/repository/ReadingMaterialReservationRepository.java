@@ -7,5 +7,6 @@ import com.example.model.ReadingMaterialReservation;
 
 @Repository("readingMaterialReservationRepository")
 public interface ReadingMaterialReservationRepository extends JpaRepository<ReadingMaterialReservation, Long>{
-	
+	ReadingMaterialReservation findByReservationId(String id);
+
 }

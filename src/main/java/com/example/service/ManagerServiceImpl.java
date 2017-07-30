@@ -8,12 +8,15 @@ import org.springframework.stereotype.Service;
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.repository.ReadingMaterialRepository;
+import com.example.repository.ReadingMaterialReservationRepository;
 
 @Service("managerService")
 public class ManagerServiceImpl implements ManagerService {
 	
 	@Autowired
 	private ReadingMaterialRepository readingMaterialRepository;
+	@Autowired
+	private ReadingMaterialReservationRepository readingMaterialReservationRepository;
 	
 	@Override
 	public void saveReadingMaterial(ReadingMaterial readingMaterial) {
@@ -32,8 +35,9 @@ public class ManagerServiceImpl implements ManagerService {
 	}
 
 	@Override
-	public void overrideReservation(ReadingMaterialReservation readingMaterialReservation) {
-		
+	public void overrideReservation(String id) {
+
+		readingMaterialReservationRepository.delete( readingMaterialReservationRepository.findByReservationId(id));
 	}
 
 	@Override
@@ -51,6 +55,12 @@ public class ManagerServiceImpl implements ManagerService {
 	public ReadingMaterial findReadingMaterialById(int id) {
 		return 	readingMaterialRepository.findByReadingMaterialId(id);
 
+	}
+
+	@Override
+	public ArrayList<ReadingMaterialReservation> getAllReadingMaterialReservation() {
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = (ArrayList<ReadingMaterialReservation>) readingMaterialReservationRepository.findAll();
+		return listReadingMaterialReservation;
 	}
 
 	

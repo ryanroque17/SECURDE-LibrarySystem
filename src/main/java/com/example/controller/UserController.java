@@ -72,6 +72,8 @@ public class UserController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		ReadingMaterial readingMaterial = userService.findReadingMaterialById(readingMaterialId);
+		modelAndView.addObject("successMessage", "A reading material has been reviewed successfully");
+
 		modelAndView.addObject("readingMaterial", readingMaterial);
 		modelAndView.addObject("reviewEntry", new Review());
 		modelAndView.addObject("userId", userId);

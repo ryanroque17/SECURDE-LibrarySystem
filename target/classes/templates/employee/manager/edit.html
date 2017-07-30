@@ -45,9 +45,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/employee/manager/home}">Home</a></li>
-					<li class="active"><a th:href="@{/employee/manager/manage}">Reading Materials</a></li>
-					<li><a th:href="@{/employee/manager/manage}">Room Reservations</a></li>
-
+					<li class="active"><a th:href="@{/employee/manager/manage}">Reading
+							Materials</a></li>
+					<li><a th:href="@{/employee/manager/override}">Override
+							Reservations</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -102,8 +103,7 @@
 								</div>
 								<input id="type" type="hidden" th:field="*{type}"
 									class="form-control" value="book"
-									th:value="${newReadingMaterial.type}" /> 
-								<input id="status"
+									th:value="${newReadingMaterial.type}" /> <input id="status"
 									type="hidden" th:field="*{status}" class="form-control"
 									value="available" th:value="${newReadingMaterial.status} " />
 
@@ -164,7 +164,7 @@
 									</div>
 								</div>
 
-								<span th:utext="${successMessage}"></span>
+								<span style="color: #00ff89;" th:utext="${successMessage}"></span>
 
 
 							</form>

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.ReadingMaterial;
+import com.example.model.ReadingMaterialReservation;
 import com.example.service.ManagerService;
 
 @Controller
@@ -145,6 +146,30 @@ public class ManagerController {
 		modelAndView.addObject("successMessage", "A reading material has been deleted successfully");
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
 		modelAndView.setViewName("/employee/manager/delete");
+
+		return modelAndView;
+	}
+	@RequestMapping(value = "/employee/manager/override", method = RequestMethod.GET)
+	public ModelAndView overrideReservation() {
+		ModelAndView modelAndView = new ModelAndView();
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllReadingMaterialReservation();
+		modelAndView.addObject("listReadingMaterialReservation", listReadingMaterialReservation);
+
+		modelAndView.setViewName("/employee/manager/override");
+
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/employee/manager/override", method = RequestMethod.POST)
+	public ModelAndView overrideReservationFinish(@RequestParam("deleteId") String deleteId) {
+		ModelAndView modelAndView = new ModelAndView();
+		System.out.println("OVERRIDE POST");
+		managerService.overrideReservation(deleteId);
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllReadingMaterialReservation();
+
+		modelAndView.addObject("successMessage", "A reservation has been overriden successfully");
+		modelAndView.addObject("listReadingMaterialReservation", listReadingMaterialReservation);
+		modelAndView.setViewName("/employee/manager/override");
 
 		return modelAndView;
 	}

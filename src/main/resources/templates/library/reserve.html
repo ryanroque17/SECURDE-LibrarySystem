@@ -49,8 +49,8 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Borrow</a></li>
-					<li class="active"><a href="#">Reserve</a></li>
+					<li><a th:href="@{/library/home}">Borrow</a></li>
+					<li class="active"><a th:href="@{/library/room}">Reserve</a></li>
 
 				</ul>
 
@@ -123,14 +123,13 @@
 									Status: <label style="color: white"
 										th:text="${readingMaterial.status}"></label>
 								</div>
-								<div class="form-group">
-
+								<div class="form-group" style="color: white">
+									Reservation Date:
 									<input type="text" th:field="*{reservationDate}"
 										placeholder="mm/dd/yy" value="07/06/2017" />
-
-
 								</div>
-								<div class="form-group">
+								<div class="form-group" style="color: white">
+									Return Date:
 									<input type="text" th:field="*{returnDate}"
 										placeholder="mm/dd/yy" value="07/07/2017" />
 
@@ -146,7 +145,7 @@
 									</div>
 								</div>
 
-								<span th:utext="${successMessage}"></span>
+								<span style="color:#00ff89;" th:utext="${successMessage}"></span>
 
 
 							</form>

@@ -38,9 +38,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/employee/manager/home}">Home</a></li>
-					<li class="active"><a th:href="@{/employee/manager/manage}">Reading Materials</a></li>
-					<li><a th:href="@{/employee/manager/manage}">Room Reservations</a></li>
-
+					<li class="active"><a th:href="@{/employee/manager/manage}">Reading
+							Materials</a></li>
+					<li><a th:href="@{/employee/manager/override}">Override
+							Reservations</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -82,21 +83,19 @@
 								th:action="@{/employee/manager/create}"
 								th:object="${newReadingMaterial}" method="post"
 								class="form-horizontal" role="form">
-								
+
 								<div class="form-group" style="text-align: center; color: white">
 									<input type="radio" name="type" id="type" value="book" checked>
-									Book
-									<input type="radio" name="type" id="type" value="thesis">
-									Thesis
-									<input type="radio" name="type" id="type" value="magazine"> 
-									Magazine
-									
+									Book <input type="radio" name="type" id="type" value="thesis">
+									Thesis <input type="radio" name="type" id="type"
+										value="magazine"> Magazine
+
 								</div>
 								<div class="form-group">
 									<label th:if="${#fields.hasErrors('deweyDecimal')}"
-										th:errors="*{deweyDecimal}" class="validation-message"></label> <input
-										type="text" th:field="*{deweyDecimal}" placeholder="Dewey Decimal System ID"
-										class="form-control" />
+										th:errors="*{deweyDecimal}" class="validation-message"></label>
+									<input type="text" th:field="*{deweyDecimal}"
+										placeholder="Dewey Decimal System ID" class="form-control" />
 								</div>
 								<div class="form-group">
 									<label th:if="${#fields.hasErrors('title')}"
@@ -132,12 +131,11 @@
 										placeholder="Description" class="form-control" />
 								</div>
 								<div class="form-group">
-									<label th:if="${#fields.hasErrors('tags')}"
-										th:errors="*{tags}" class="validation-message"></label> <input
-										type="text" th:field="*{tags}"
-										placeholder="Tags" class="form-control" />
+									<label th:if="${#fields.hasErrors('tags')}" th:errors="*{tags}"
+										class="validation-message"></label> <input type="text"
+										th:field="*{tags}" placeholder="Tags" class="form-control" />
 								</div>
-							
+
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6 col-sm-offset-3">
@@ -149,7 +147,7 @@
 									</div>
 								</div>
 
-								<span th:utext="${successMessage}"></span>
+								<span style="color: #00ff89;" th:utext="${successMessage}"></span>
 
 
 							</form>

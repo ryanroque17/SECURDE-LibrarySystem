@@ -33,9 +33,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/employee/manager/home}">Home</a></li>
-					<li class="active"><a th:href="@{/employee/manager/manage}">Reading Materials</a></li>
-					<li><a th:href="@{/employee/manager/manage}">Room Reservations</a></li>
-
+					<li class="active"><a th:href="@{/employee/manager/manage}">Reading
+							Materials</a></li>
+					<li><a th:href="@{/employee/manager/override}">Override
+							Reservations</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -64,7 +65,7 @@
 
 
 		<div class="container">
-			<br> 
+			<br>
 			<div class="im-centered">
 				<div class="row text-center">
 					<h3>
@@ -109,7 +110,7 @@
 					<form id="createEmployee" th:action="@{/employee/manager/delete}"
 						method="get">
 						<a th:href="@{/employee/manager/delete}">
-							<div class="col-sm-4" style="margin-left:34%">
+							<div class="col-sm-4" style="margin-left: 34%">
 								<div class="thumbnail">
 									<div class="caption">
 										<h4 class="options-heading" align="center">Delete a

@@ -50,8 +50,8 @@ $(function() {
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Borrow</a></li>
-					<li class="active"><a href="#">Reserve</a></li>
+					<li><a th:href="@{/library/home}">Borrow</a></li>
+					<li class="active"><a th:href="@{/library/room}">Reserve</a></li>
 
 				</ul>
 
@@ -116,7 +116,7 @@ $(function() {
 									</div>
 								</div>
 
-								<span th:utext="${successMessage}"></span>
+								<span style="color:#00ff89;" th:utext="${successMessage}"></span>
 
 
 							</form>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>Staff - Add Reading Material</title>
+<title>Manager - Override Reading Material Reservation</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,6 +13,12 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script th:src="@{/js/login.js}"></script>
+<script>
+	$('select[name="listReadingMaterialReservation"]').change(function() {
+
+	});
+</script>
+
 <style>
 .validation-message {
 	color: #FF1C19
@@ -37,10 +44,11 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a th:href="@{/employee/staff/home}">Home</a></li>
-					<li><a th:href="@{/employee/staff/manage}">Reading Materials</a></li>
-					<li><a th:href="@{/employee/staff/manage}">Room Reservations</a></li>
-
+					<li><a th:href="@{/employee/manager/home}">Home</a></li>
+					<li><a th:href="@{/employee/manager/manage}">Reading
+							Materials</a></li>
+					<li class="active"><a th:href="@{/employee/manager/override}">Override
+							Reservations</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -72,84 +80,36 @@
 					style="background: rgba(0, 0, 0, 0.8)">
 					<div class="row">
 						<div class="col-xs-12" align="center" style="color: white">
-							<h3>Add a Reading Material</h3>
+							<h2>Override Reservation</h2>
 						</div>
 					</div>
 					<hr>
 					<div class="panel-body">
 						<div class="col-lg-12">
 							<form autocomplete="off" action="#"
-								th:action="@{/employee/staff/create}"
-								th:object="${newReadingMaterial}" method="post"
+								th:action="@{/employee/manager/override}" method="post"
 								class="form-horizontal" role="form">
-								
-								<div class="form-group" style="text-align: center; color: white">
-									<input type="radio" name="type" id="type" value="book" checked>
-									Book
-									<input type="radio" name="type" id="type" value="thesis">
-									Thesis
-									<input type="radio" name="type" id="type" value="magazine"> 
-									Magazine
-									
-								</div>
+								<!-- View all Reservation -->
 								<div class="form-group">
-									<label th:if="${#fields.hasErrors('deweyDecimal')}"
-										th:errors="*{deweyDecimal}" class="validation-message"></label> <input
-										type="text" th:field="*{deweyDecimal}" placeholder="Dewey Decimal System ID"
-										class="form-control" />
+									<label for="sel1" style="color: white">Select the
+										reservation:</label> <select id="deleteId" name="deleteId"
+										class="form-control">
+										<option th:each="item : ${listReadingMaterialReservation}"
+											th:text="${item.reservationId} + ' by ' + ${item.userId}"
+											th:value="${item.reservationId}"></option>
 								</div>
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('title')}"
-										th:errors="*{title}" class="validation-message"></label> <input
-										type="text" th:field="*{title}" placeholder="Title"
-										class="form-control" />
-								</div>
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('author')}"
-										th:errors="*{author}" class="validation-message"></label> <input
-										type="text" th:field="*{author}" placeholder="Author"
-										class="form-control" />
-								</div>
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('publisher')}"
-										th:errors="*{publisher}" class="validation-message"></label> <input
-										type="text" th:field="*{publisher}" placeholder="Publisher"
-										class="form-control" />
-								</div>
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
-										class="validation-message"></label> <input type="text"
-										th:field="*{year}" placeholder="Year Published"
-										class="form-control" />
-								</div>
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('description')}"
-										th:errors="*{description}" class="validation-message"></label>
-									<input type="text" th:field="*{description}"
-										placeholder="Description" class="form-control" />
-								</div>
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('tags')}"
-										th:errors="*{tags}" class="validation-message"></label> <input
-										type="text" th:field="*{tags}"
-										placeholder="Tags" class="form-control" />
-								</div>
-							
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6 col-sm-offset-3">
 											<input type="submit" name="register-submit"
 												id="register-submit" tabindex="4"
-												class="form-control btn btn-register" value="Submit"
+												class="form-control btn btn-register" value="Delete"
 												style="background-color: #116341; color: white">
 										</div>
 									</div>
 								</div>
 
-								<span style="color:#00ff89;" th:utext="${successMessage}"></span>
+								<span style="color: #00ff89;" th:utext="${successMessage}"></span>
 
 
 							</form>

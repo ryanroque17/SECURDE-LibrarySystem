@@ -33,8 +33,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a th:href="@{/employee/manager/home}">Home</a></li>
-					<li><a th:href="@{/employee/manager/manage}">Reading Materials</a></li>
-					<li><a th:href="@{/employee/manager/manage}">Room Reservations</a></li>
+					<li><a th:href="@{/employee/manager/manage}">Reading
+							Materials</a></li>
+					<li><a th:href="@{/employee/manager/override}">Override
+							Reservations</a></li>
 
 				</ul>
 
@@ -74,30 +76,35 @@
 				<div class="row">
 
 					<div class="col-sm-2"></div>
-					<form id="registerButton" th:action="@{/employee/manager/manage}" method="get">
+					<form id="registerButton" th:action="@{/employee/manager/manage}"
+						method="get">
 						<a th:href="@{/employee/manager/manage}">
 							<div class="col-sm-4">
 								<div class="thumbnail">
 									<div class="caption">
-										<h4 class="options-heading" align="center">Manage
-											Reading Materials</h4>
+										<h4 class="options-heading" align="center">Manage Reading
+											Materials</h4>
 									</div>
 									<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
 								</div>
 							</div>
 						</a>
 					</form>
-					<a href="#" class="">
-						<div class="col-sm-4">
-							<div class="thumbnail">
-								<div class="caption">
-									<h4 class="options-heading" align="center">Override Existing Room Reservations</h4>
+					<form id="override" th:action="@{/employee/manager/override}"
+						method="get">
+						<a onclick="document.getElementById('override').submit();"
+							th:href="@{/employee/manager/override}">
+							<div class="col-sm-4">
+								<div class="thumbnail">
+									<div class="caption">
+										<h4 class="options-heading" align="center">Override
+											Reservations</h4>
+									</div>
+									<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
 								</div>
-								<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
-
 							</div>
-						</div>
-					</a>
+						</a>
+					</form>
 					<div class="col-sm-2"></div>
 				</div>
 				<!--row -->
