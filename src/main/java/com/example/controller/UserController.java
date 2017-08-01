@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
@@ -32,8 +35,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = "/library/reserve", method = RequestMethod.GET)
-	public ModelAndView reserveReadingMaterial(@RequestParam("idReserve") int readingMaterialId, @RequestParam("idUser") String userId) {
+	@RequestMapping(value = "/library/reserve", method = RequestMethod.POST)
+	public ModelAndView reserveReadingMaterial(RedirectAttributes ra, @RequestParam("idReserve") int readingMaterialId, @RequestParam("idUser") String userId) {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		ReadingMaterial readingMaterial = userService.findReadingMaterialById(readingMaterialId);
@@ -46,7 +49,7 @@ public class UserController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/library/reserve", method = RequestMethod.POST)
+	@RequestMapping(value = "/library/reserve_again", method = RequestMethod.POST)
 	public ModelAndView saveReserveReadingMaterial(@Valid @ModelAttribute("reservation") ReadingMaterialReservation readingMaterialReservation, BindingResult bindingResult, @RequestParam("idReserve") int readingMaterialId, @RequestParam("userId") String userId) {
 		ModelAndView modelAndView = new ModelAndView();
 			ReadingMaterial readingMaterial = userService.findReadingMaterialById(readingMaterialId);
