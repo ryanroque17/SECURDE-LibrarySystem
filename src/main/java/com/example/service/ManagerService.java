@@ -15,5 +15,7 @@ public interface ManagerService {
 	public void overrideReservation(String readingMaterialReservation);
 	public ArrayList<ReadingMaterial> getAllReadingMaterials();
 	public ArrayList<ReadingMaterialReservation> getAllReadingMaterialReservation();
+	public ArrayList<ReadingMaterialReservation> getAllCurrentReadingMaterialReservation();
+
 	public void exportLogs();
 }

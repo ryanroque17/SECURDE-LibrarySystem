@@ -1,5 +1,7 @@
 package com.example.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,10 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.data.annotation.Transient;
 
 
 @Entity
@@ -38,14 +37,14 @@ public class ReadingMaterial {
 	@Column(name = "tags")
 	@NotEmpty(message = "*Please provide the tags")
 	private String tags;
-	@Column(name = "status")
-	private String status;
+
 	@Column(name = "publisher")
 	@NotEmpty(message = "*Please provide the publisher")
 	private String publisher;
 	@Column(name = "type")
 	private String type;
-	
+	private String status;
+	private String returnDate;
 
 	public int getReadingMaterialId() {
 		return readingMaterialId;
@@ -106,6 +105,12 @@ public class ReadingMaterial {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public String getReturnDate() {
+		return returnDate;
+	}
+	public void setReturnDate(String returnDate) {
+		this.returnDate = returnDate;
 	}
 	
 }

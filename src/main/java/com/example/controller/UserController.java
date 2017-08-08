@@ -61,7 +61,6 @@ public class UserController {
 			c.add(Calendar.DATE, 7);
 			returnDate = c.getTime();
 			
-			readingMaterial.setStatus("out");
 			readingMaterialReservation.setReservationDate(reservationDate);
 			readingMaterialReservation.setReturnDate(returnDate);
 
@@ -80,12 +79,11 @@ public class UserController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/library/review", method = RequestMethod.GET)
+	@RequestMapping(value = "/library/review", method = RequestMethod.POST)
 	public ModelAndView reviewReadingMaterial(@RequestParam("idReserve") int readingMaterialId, @RequestParam("userId") String userId) {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		ReadingMaterial readingMaterial = userService.findReadingMaterialById(readingMaterialId);
-		modelAndView.addObject("successMessage", "A reading material has been reviewed successfully");
 
 		modelAndView.addObject("readingMaterial", readingMaterial);
 		modelAndView.addObject("reviewEntry", new Review());
@@ -96,7 +94,7 @@ public class UserController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/library/review", method = RequestMethod.POST)
+	@RequestMapping(value = "/library/review/", method = RequestMethod.POST)
 	public ModelAndView addReviewReadingMaterial(@Valid @ModelAttribute("reviewEntry") Review review, @RequestParam("idReserve") int readingMaterialId, @RequestParam("idUser") String userId) {
 		ModelAndView modelAndView = new ModelAndView();
 		review.setUserId(userId);
@@ -107,7 +105,7 @@ public class UserController {
 		modelAndView.addObject("readingMaterial", readingMaterial);
 		modelAndView.addObject("reviewEntry", new Review());
 		modelAndView.addObject("userId", userId);
-
+		modelAndView.addObject("successMessage", "A reading material has been reviewed successfully");
 		modelAndView.setViewName("/library/review");
 
 		return modelAndView;

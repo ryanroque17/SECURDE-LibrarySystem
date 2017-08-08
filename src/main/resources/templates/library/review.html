@@ -84,14 +84,14 @@ $(function() {
 					style="background: rgba(0, 0, 0, 0.8)">
 					<div class="row">
 						<div class="col-xs-12" align="center" style="color: white">
-							<h2>Reserve</h2>
+							<h2>Review</h2>
 						</div>
 					</div>
 					<hr>
 					<div class="panel-body">
 						<div class="col-lg-12">
 							<form autocomplete="off" action="#"
-								th:action="@{/library/review}"
+								th:action="@{/library/review/}"
 								th:object="${reviewEntry}" method="post"
 								class="form-horizontal" role="form">
 								<input type="hidden" name="idUser" id="idUser" th:value="${userId}"/>

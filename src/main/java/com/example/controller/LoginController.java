@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.ReadingMaterial;
+import com.example.model.ReadingMaterialReservation;
 import com.example.model.User;
+import com.example.service.ManagerService;
 import com.example.service.UserService;
 
 @Controller
@@ -26,6 +28,8 @@ public class LoginController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private ManagerService managerService;
 
 	@RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
 	public ModelAndView login(){
@@ -104,7 +108,19 @@ public class LoginController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
 		ArrayList<ReadingMaterial> listReadingMaterials = userService.getAllReadingMaterials();
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservations = managerService.getAllCurrentReadingMaterialReservation();
+		System.out.println("size" + listReadingMaterialReservations.size());
+		
+		for(int i=0; i<listReadingMaterials.size();i++){
+			for(int j=0; j<listReadingMaterialReservations.size();j++)
+				if(listReadingMaterials.get(i).getReadingMaterialId() == listReadingMaterialReservations.get(j).getReadingMaterialId()){
+					listReadingMaterials.get(i).setStatus("Out");
+					listReadingMaterials.get(i).setReturnDate(listReadingMaterialReservations.get(j).getReturnDate().toString().split(" ")[0]);
+				}
+		}
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
+		modelAndView.addObject("listReservations", listReadingMaterialReservations);
+		
 		modelAndView.addObject("userId", user.getId());
 		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");

@@ -119,10 +119,8 @@
 									Tags: <label style="color: white"
 										th:text="${readingMaterial.tags}"></label>
 								</div>
-								<div class="form-group" style="color: white">
-									Status: <label style="color: white"
-										th:text="${readingMaterial.status}"></label>
-								</div>
+								
+							
 								
 								<div class="form-group">
 									<div class="row">
@@ -141,7 +139,7 @@
 							</form>
 							<div th:switch="${canComment}">
 								<span th:case="'yes'"><form id="login-form"
-										th:action="@{/library/review}" method="get" role="form"
+										th:action="@{/library/review}" method="post" role="form"
 										style="display: block;">
 										<div class="form-group">
 											<input type="hidden" id="idReserve" name="idReserve"

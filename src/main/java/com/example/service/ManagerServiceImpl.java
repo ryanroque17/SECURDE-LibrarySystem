@@ -1,6 +1,7 @@
 package com.example.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,6 +62,20 @@ public class ManagerServiceImpl implements ManagerService {
 	public ArrayList<ReadingMaterialReservation> getAllReadingMaterialReservation() {
 		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = (ArrayList<ReadingMaterialReservation>) readingMaterialReservationRepository.findAll();
 		return listReadingMaterialReservation;
+	}
+
+	@Override
+	public ArrayList<ReadingMaterialReservation> getAllCurrentReadingMaterialReservation() {
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = getAllReadingMaterialReservation();
+		ArrayList<ReadingMaterialReservation> currentReadingMaterialReservation = new ArrayList<ReadingMaterialReservation>();
+		Date today = new Date();
+
+		for(int i=0; i<listReadingMaterialReservation.size();i++){
+			if(listReadingMaterialReservation.get(i).getReturnDate().after(today)){
+				currentReadingMaterialReservation.add(listReadingMaterialReservation.get(i));
+			}
+		}
+		return currentReadingMaterialReservation;
 	}
 
 	

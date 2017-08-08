@@ -90,13 +90,13 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
-				
-					<ul class="nav navbar-nav">
-						<li class="active"><a th:href="@{/library/home}">Borrow</a></li>
-						
-						<li><a th:href="@{/library/room}">Room</a></li>
-					
-					</ul>	
+
+				<ul class="nav navbar-nav">
+					<li class="active"><a th:href="@{/library/home}">Borrow</a></li>
+
+					<li><a th:href="@{/library/room}">Room</a></li>
+
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown"><b><span th:utext="${userName}"></span></b>
@@ -129,38 +129,44 @@
 			<label class="checkbox-inline"><input id="thesisCheckbox"
 				name="thesisCheckbox" type="checkbox" value="thesis">Thesis</label> -->
 		</div>
-		<table id="example" class="display" cellspacing="0" width="100%">
+		<table id="example" class="display" cellspacing="0" width="100%" style= "border:1px solid #ddd">
 			<thead>
 				<tr>
-					<th style="width:85px">Category</th>
-					<th style="width:120px">Author/s</th>
-					<th>Title</th>
-					<th>Publisher</th>
-					<th>Year</th>
-					<th>Status</th>
-					<th style="width:144px">Date of Availability</th>
-					<th></th>
+					<th style="width: 85px; background-color: #264035; color: white;">Category</th>
+					<th style="width: 120px;  background-color: #264035; color: white;">Author/s</th>
+					<th style="background-color: #264035; color: white;">Title</th>
+					<th style="background-color: #264035; color: white;">Publisher</th>
+					<th style="background-color: #264035; color: white;">Year</th>
+					<th style="background-color: #264035; color: white;">Status</th>
+					<th style="width: 144px; background-color: #264035; color: white;">Date of Availability</th>
+					<th style="background-color: #264035; color: white;"></th>
 				</tr>
 			</thead>
 			<tfoot>
 
 			</tfoot>
 			<tbody>
-				
+
 				<tr th:each="item : ${listReadingMaterials}">
-					<td th:text="${item.type}"></td>
+					<td style="align" th:text="${item.type}"></td>
 					<td th:text="${item.author}"></td>
 					<td th:text="${item.title}"></td>
 					<td th:text="${item.publisher}"></td>
 					<td th:text="${item.year}"></td>
-					<td th:text="${item.status}"></td>
-					<td>Available</td>
+					<td
+						th:style="${item.returnDate!=null} ? 'color:#FF1C19;' : 'color:#116341;'"
+						th:text="${item.returnDate!=null} ? 'Out' : 'Available'"></td>
+					<td
+						th:style="${item.returnDate!=null} ? 'color:#FF1C19;' : 'color:#116341;'"
+						th:text="${item.returnDate!=null} ? ${item.returnDate} : 'Available'"></td>
+
+
 					<td><div class="form-group">
 							<div class="row">
 								<div class="col-lg-12">
 									<div class="text-center">
-										<form id="login-form" th:action="@{/library/reserve}" method="post"
-											role="form" style="display: block;">
+										<form id="login-form" th:action="@{/library/reserve}"
+											method="post" role="form" style="display: block;">
 											<div class="form-group">
 												<input type="hidden" id="idReserve" name="idReserve"
 													th:value="${item.readingMaterialId}"></input>
@@ -171,10 +177,17 @@
 											</div>
 											<div class="form-group">
 												<div class="row">
-														<input type="submit"
-															tabindex="4" class="form-control btn btn-login"
-															value="Reserve"
-															style="background-color: #116341; color: white; width:75%">
+													<th:block th:if="${item.returnDate!=null}">
+														<input type="submit" tabindex="4"
+															class="form-control btn btn-login" value="Reserve"
+															style="background-color: #116341; color: white; width: 75%"
+															disabled>
+													</th:block>
+													<th:block th:unless="${item.returnDate!=null}">
+														<input type="submit" tabindex="4"
+															class="form-control btn btn-login" value="Reserve"
+															style="background-color: #116341; color: white; width: 75%">
+													</th:block>
 												</div>
 											</div>
 										</form>
