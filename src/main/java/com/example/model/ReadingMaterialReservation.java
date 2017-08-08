@@ -1,5 +1,7 @@
 package com.example.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,11 +23,9 @@ public class ReadingMaterialReservation {
 	@Column(name = "reading_material_id")
 	private int readingMaterialId;
 	@Column(name = "reservation_date")
-	@NotEmpty(message = "*Please provide the reservation date")
-	private String reservationDate;
+	private Date reservationDate;
 	@Column(name = "return_date")
-	@NotEmpty(message = "*Please provide the return date")
-	private String returnDate;
+	private Date returnDate;
 	
 	public String getReservationId() {
 		return reservationId;
@@ -45,16 +45,16 @@ public class ReadingMaterialReservation {
 	public void setReadingMaterialId(int readingMaterialId) {
 		this.readingMaterialId = readingMaterialId;
 	}
-	public String getReservationDate() {
+	public Date getReservationDate() {
 		return reservationDate;
 	}
-	public void setReservationDate(String reservationDate) {
+	public void setReservationDate(Date reservationDate) {
 		this.reservationDate = reservationDate;
 	}
-	public String getReturnDate() {
+	public Date getReturnDate() {
 		return returnDate;
 	}
-	public void setReturnDate(String returnDate) {
+	public void setReturnDate(Date returnDate) {
 		this.returnDate = returnDate;
 	}
 }

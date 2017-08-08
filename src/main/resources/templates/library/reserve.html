@@ -89,8 +89,8 @@
 					<hr>
 					<div class="panel-body">
 						<div class="col-lg-12">
-							<form autocomplete="off" action="#"
-								th:action="@{/library/reserve_again}" th:object="${reservation}"
+							<form autocomplete="off" 
+								th:action="@{/library/reserve/}" th:object="${reservation}"
 								method="post" class="form-horizontal" role="form">
 								<input type="hidden" name="userId" id="userId"
 									th:value="${userId}" /> <input type="hidden" name="idReserve"
@@ -123,17 +123,7 @@
 									Status: <label style="color: white"
 										th:text="${readingMaterial.status}"></label>
 								</div>
-								<div class="form-group" style="color: white">
-									Reservation Date:
-									<input type="text" th:field="*{reservationDate}"
-										placeholder="mm/dd/yy" value="07/06/2017" />
-								</div>
-								<div class="form-group" style="color: white">
-									Return Date:
-									<input type="text" th:field="*{returnDate}"
-										placeholder="mm/dd/yy" value="07/07/2017" />
-
-								</div>
+								
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6 col-sm-offset-3">

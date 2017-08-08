@@ -4,6 +4,7 @@ package com.example.controller;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.validation.Valid;
@@ -49,12 +50,21 @@ public class UserController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/library/reserve_again", method = RequestMethod.POST)
+	@RequestMapping(value = "/library/reserve/", method = RequestMethod.POST)
 	public ModelAndView saveReserveReadingMaterial(@Valid @ModelAttribute("reservation") ReadingMaterialReservation readingMaterialReservation, BindingResult bindingResult, @RequestParam("idReserve") int readingMaterialId, @RequestParam("userId") String userId) {
 		ModelAndView modelAndView = new ModelAndView();
 			ReadingMaterial readingMaterial = userService.findReadingMaterialById(readingMaterialId);
-
+			Date reservationDate = new Date();
+			Date returnDate = new Date();
+			Calendar c = Calendar.getInstance(); 
+			c.setTime(returnDate); 
+			c.add(Calendar.DATE, 7);
+			returnDate = c.getTime();
+			
 			readingMaterial.setStatus("out");
+			readingMaterialReservation.setReservationDate(reservationDate);
+			readingMaterialReservation.setReturnDate(returnDate);
+
 			readingMaterialReservation.setUserId(userId);
 			readingMaterialReservation.setReadingMaterialId(readingMaterialId);
 			userService.reserveReadingMaterial(readingMaterial, readingMaterialReservation);
