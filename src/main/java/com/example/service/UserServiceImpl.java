@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService{
 	public void saveUser(User user, String role) {
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setActive(1);
-        
+        user.setSecretQuestionAnswer(bCryptPasswordEncoder.encode(user.getSecretQuestionAnswer()));
         
         Role userRole = null;
 		if(role.equals("user")){
@@ -118,8 +118,6 @@ public class UserServiceImpl implements UserService{
 				roomReservations.add(listRoomReservation.get(i));
 			}
 		}
-			
-				
 		
 		return roomReservations;
 	}

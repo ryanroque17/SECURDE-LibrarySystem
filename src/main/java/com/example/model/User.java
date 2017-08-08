@@ -31,28 +31,28 @@ public class User {
 	@NotEmpty(message = "*Please provide an email")
 	private String email;
 	@Column(name = "password")
-	@Length(min = 5, message = "*Your password must have at least 5 characters")
+	@Length(min = 5, message = "*Your password must have at least 6 characters")
 	@Transient
 	private String password;
 	@Column(name = "first_name")
-	@NotEmpty(message = "*Please provide your first name")
+	@NotEmpty(message = "*First name is required")
 	private String firstName;
 	@Column(name = "middle_name")
-	@NotEmpty(message = "*Please provide your middle name")
+	@NotEmpty(message = "*Middle name is required")
 	private String middleName;
 	@Column(name = "last_name")
-	@NotEmpty(message = "*Please provide your last name")
+	@NotEmpty(message = "*Last name is required")
 	private String lastName;
 	@Column(name = "birthday")
-	@NotEmpty(message = "*Please provide your birthday")
+	@NotEmpty(message = "*Birthday is required")
 	private String birthday;
 	@Column(name = "type")
 	private String type;
 	@Column(name = "secret_question")
-	@NotEmpty(message = "*Please provide your secret question")
+	@NotEmpty(message = "*Secret question is required")
 	private String secretQuestion;
 	@Column(name = "secret_question_answer")
-	@NotEmpty(message = "*Please provide your secret question answer")
+	@NotEmpty(message = "*Secret question answer is required")
 	private String secretQuestionAnswer;
 	@Column(name = "active")
 	private int active;

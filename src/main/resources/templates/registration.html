@@ -33,7 +33,7 @@
 								th:object="${newUser}" method="post" class="form-horizontal"
 								role="form">
 								<div class="form-group">
-									<label th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
+									<label style="color:#FF1C19" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"
 										class="validation-message"></label> <input type="text"
 										th:field="*{id}" placeholder="ID Number" class="form-control" />
 								</div>
@@ -41,7 +41,7 @@
 									<div class="col-xs-4 col-sm-4 col-md-4">
 
 										<div class="form-group">
-											<label th:if="${#fields.hasErrors('firstName')}"
+											<label style="color:#FF1C19" th:if="${#fields.hasErrors('firstName')}"
 												th:errors="*{firstName}" class="validation-message"></label>
 											<input type="text" th:field="*{firstName}"
 												placeholder="First Name" class="form-control" />
@@ -50,7 +50,7 @@
 									<div class="col-xs-4 col-sm-4 col-md-4">
 
 										<div class="form-group">
-											<label th:if="${#fields.hasErrors('middleName')}"
+											<label style="color:#FF1C19" th:if="${#fields.hasErrors('middleName')}"
 												th:errors="*{middleName}" class="validation-message"></label>
 											<input type="text" th:field="*{middleName}"
 												placeholder="Middle Name" class="form-control" />
@@ -58,7 +58,7 @@
 									</div>
 									<div class="col-xs-4 col-sm-4 col-md-4">
 										<div class="form-group">
-											<label th:if="${#fields.hasErrors('lastName')}"
+											<label style="color:#FF1C19" th:if="${#fields.hasErrors('lastName')}"
 												th:errors="*{lastName}" class="validation-message"></label>
 											<input type="text" th:field="*{lastName}"
 												placeholder="Last Name" class="form-control" />
@@ -66,31 +66,31 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label th:if="${#fields.hasErrors('birthday')}"
+									<label style="color:#FF1C19" th:if="${#fields.hasErrors('birthday')}"
 										th:errors="*{birthday}" class="validation-message"></label> <input
 										type="text" th:field="*{birthday}"
 										placeholder="Birthday - (mm/dd/yyyy)" class="form-control" />
 								</div>
 								<div class="form-group">
-									<input type="text" th:field="*{email}" placeholder="Email"
-										class="form-control" /> <label
-										th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
-										class="validation-message"></label>
+									<label style="color:#FF1C19" th:if="${#fields.hasErrors('email')}"
+										th:errors="*{email}" class="validation-message"></label> <input
+										type="text" th:field="*{email}" placeholder="Email"
+										class="form-control" />
 								</div>
 								<div class="form-group">
-									<input type="password" th:field="*{password}"
-										placeholder="Password" class="form-control" /> <label
-										th:if="${#fields.hasErrors('password')}"
-										th:errors="*{password}" class="validation-message"></label>
+									<label style="color:#FF1C19" th:if="${#fields.hasErrors('password')}"
+										th:errors="*{password}" class="validation-message"></label> <input
+										type="password" th:field="*{password}" placeholder="Password"
+										class="form-control" />
 								</div>
 								<div class="form-group">
-									<label th:if="${#fields.hasErrors('secretQuestion')}"
+									<label style="color:#FF1C19" th:if="${#fields.hasErrors('secretQuestion')}"
 										th:errors="*{secretQuestion}" class="validation-message"></label>
 									<input type="text" th:field="*{secretQuestion}"
 										placeholder="Secret Question" class="form-control" />
 								</div>
 								<div class="form-group">
-									<label th:if="${#fields.hasErrors('secretQuestionAnswer')}"
+									<label style="color:#FF1C19" th:if="${#fields.hasErrors('secretQuestionAnswer')}"
 										th:errors="*{secretQuestionAnswer}" class="validation-message"></label>
 									<input type="text" th:field="*{secretQuestionAnswer}"
 										placeholder="Secret Question Answer" class="form-control" />
@@ -108,7 +108,7 @@
 									</div>
 								</div>
 
-								<span style="color:#00ff89;" th:utext="${successMessage}"></span>
+								<span style="color: #00ff89;" th:utext="${successMessage}"></span>
 
 
 							</form>
