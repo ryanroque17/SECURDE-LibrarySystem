@@ -78,6 +78,12 @@ public class ManagerServiceImpl implements ManagerService {
 		return currentReadingMaterialReservation;
 	}
 
+	@Override
+	public ReadingMaterial findReadingMaterialByName(String name) {
+		// TODO Auto-generated method stub
+		return readingMaterialRepository.findByTitle(name);
+	}
+
 	
 
 }

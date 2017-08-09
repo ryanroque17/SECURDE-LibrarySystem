@@ -45,9 +45,10 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/employee/staff/home}">Home</a></li>
-					<li class="active"><a th:href="@{/employee/staff/manage}">Reading Materials</a></li>
-					<li><a th:href="@{/employee/staff/manage}">Room Reservations</a></li>
-
+					<li class="active"><a th:href="@{/employee/staff/manage}">Reading
+							Materials</a></li>
+					<li><a th:href="@{/employee/staff/override}">Room
+							Reservations</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -79,94 +80,157 @@
 					style="background: rgba(0, 0, 0, 0.8)">
 					<div class="row">
 						<div class="col-xs-12" align="center" style="color: white">
-							<h2>Register</h2>
+							<h2>Edit</h2>
 						</div>
 					</div>
 					<hr>
 					<div class="panel-body">
 						<div class="col-lg-12">
-							<form autocomplete="off" action="#"
-								th:action="@{/employee/staff/edit}"
-								th:object="${newReadingMaterial}" method="post"
+							<form id="leggo" autocomplete="off" action="#"
+								th:action="@{/employee/staff/edit/}"
+								th:object="${readingMaterial}" method="post"
 								class="form-horizontal" role="form">
-
 								<div class="form-group">
 									<label for="sel1" style="color: white">Select the
-										reading material:</label> <select th:field="*{readingMaterialId}"
-										name="listReadingMaterials" class="form-control">
+										reading material:</label> <select id="title" th:field="*{title}"
+										name="title" class="form-control">
+										<option value="default">---Select here---</option>
 										<option th:each="item : ${listReadingMaterials}"
-											th:text="${item.title} + ' - ' + ${item.author} + ' - ' + ${item.year}"
-											th:value="${item.readingMaterialId}"></option>
+											th:text="${item.title}" th:value="${item.title}"></option>
 
 									</select>
 								</div>
-								<input id="type" type="hidden" th:field="*{type}"
-									class="form-control" value="book"
-									th:value="${newReadingMaterial.type}" /> 
-								<input id="status"
-									type="hidden" th:field="*{status}" class="form-control"
-									value="available" th:value="${newReadingMaterial.status} " />
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('deweyDecimal')}"
-										th:errors="*{deweyDecimal}" class="validation-message"></label>
-									<input type="text" th:field="*{deweyDecimal}"
-										placeholder="Dewey Decimal System ID" class="form-control" />
-								</div>
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('title')}"
-										th:errors="*{title}" class="validation-message"></label> <input
-										id="title" type="text" th:field="*{title}" placeholder="Title"
-										class="form-control" />
-								</div>
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('author')}"
-										th:errors="*{author}" class="validation-message"></label> <input
-										id="author" type="text" th:field="*{author}"
-										placeholder="Author" class="form-control" />
-								</div>
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('publisher')}"
-										th:errors="*{publisher}" class="validation-message"></label> <input
-										id="publisher" type="text" th:field="*{publisher}"
-										placeholder="Publisher" class="form-control" />
-								</div>
-
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('year')}" th:errors="*{year}"
-										class="validation-message"></label> <input type="text"
-										id="year" th:field="*{year}" placeholder="Year Published"
-										class="form-control" />
-								</div>
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('description')}"
-										th:errors="*{description}" class="validation-message"></label>
-									<input id="description" type="text" th:field="*{description}"
-										placeholder="Description" class="form-control" />
-								</div>
-								<div class="form-group">
-									<label th:if="${#fields.hasErrors('tags')}" th:errors="*{tags}"
-										class="validation-message"></label> <input type="text"
-										id="tags" th:field="*{tags}" placeholder="Tags"
-										class="form-control" />
-								</div>
-
 								<div class="form-group">
 									<div class="row">
 										<div class="col-sm-6 col-sm-offset-3">
-											<input type="submit" name="register-submit"
-												id="register-submit" tabindex="4"
-												class="form-control btn btn-register" value="Submit"
-												style="background-color: #116341; color: white">
+											<input type="submit" name="register-submit" id="pls"
+												tabindex="4" class="form-control btn btn-register"
+												value="Submit"
+												style="display: none; background-color: #116341; color: white">
+											<script th:inline="javascript">
+												var submit = document
+														.getElementById('pls');
+												var form = document
+														.getElementById('leggo');
+
+												$('#title')
+														.change(
+																function() {
+																	var val = $("#title option:selected").value;
+																	var selected = document
+																			.getElementById('title').value;
+
+																	if (selected != "default") {
+																		var action = '/employee/staff/edit/'
+																				+ selected;
+																		$(
+																				"#leggo")
+																				.attr(
+																						"action",
+																						action);
+
+																		submitForm();
+																	}
+																})
+												function submitForm() {
+													$('#pls').click();
+													var action = '/employee/staff/edit';
+
+												}
+											</script>
 										</div>
 									</div>
 								</div>
+							</form>
+							<form id="leggo" autocomplete="off" action="#"
+								th:action="@{/employee/staff/edit/}"
+								th:object="${readingMaterial}" method="post"
+								class="form-horizontal" role="form">
 
-								<span style="color:#00ff89;" th:utext="${successMessage}"></span>
 
+								<th:block th:switch="${hasSelected}">
+									<span th:case="'yes'">
 
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('deweyDecimal')}"
+												th:errors="*{deweyDecimal}" class="validation-message"></label>
+											<label style="color: white">Dewey Decimal: </label><input
+												type="text" th:field="*{deweyDecimal}"
+												th:value="${readingMaterial.deweyDecimal}"
+												placeholder="Dewey Decimal System ID" class="form-control" />
+										</div>
+
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('title')}"
+												th:errors="*{title}" class="validation-message"></label> <label
+												style="color: white">Title: </label> <input id="title"
+												type="text" th:field="*{title}"
+												th:value="${readingMaterial.title}" placeholder="Title"
+												class="form-control" />
+										</div>
+
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('author')}"
+												th:errors="*{author}" class="validation-message"></label> <label
+												style="color: white">Author: </label> <input id="author"
+												type="text" th:field="*{author}"
+												th:value="${readingMaterial.author}" placeholder="Author"
+												class="form-control" />
+										</div>
+
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('publisher')}"
+												th:errors="*{publisher}" class="validation-message"></label>
+											<label style="color: white">Publisher: </label> <input
+												id="publisher" type="text" th:field="*{publisher}"
+												th:value="${readingMaterial.publisher}"
+												placeholder="Publisher" class="form-control" />
+										</div>
+
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('year')}"
+												th:errors="*{year}" class="validation-message"></label> <label
+												style="color: white">Year: </label><input type="text"
+												id="year" th:field="*{year}"
+												th:value="${readingMaterial.year}"
+												placeholder="Year Published" class="form-control" />
+										</div>
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('description')}"
+												th:errors="*{description}" class="validation-message"></label>
+											<label style="color: white">Description: </label> <input
+												id="description" type="text" th:field="*{description}"
+												th:value="${readingMaterial.description}"
+												placeholder="Description" class="form-control" />
+										</div>
+										<div class="form-group">
+											<label th:if="${#fields.hasErrors('tags')}"
+												th:errors="*{tags}" class="validation-message"></label> <label
+												style="color: white">Tags: </label><input type="text"
+												id="tags" th:field="*{tags}" placeholder="Tags"
+												th:value="${readingMaterial.tags}" class="form-control" />
+										</div> <input type="hidden" th:field="*{type}"
+										th:value="${readingMaterial.type}" placeholder="Type"
+										class="form-control" /> <input type="hidden"
+										th:field="*{readingMaterialId}"
+										th:value="${readingMaterial.readingMaterialId}"
+										placeholder="ReadingMaterialId" class="form-control" />
+
+										<div class="form-group">
+											<div class="row">
+												<div class="col-sm-6 col-sm-offset-3">
+													<input type="submit" name="register-submit"
+														id="register-submit" tabindex="4"
+														class="form-control btn btn-register" value="Submit"
+														style="background-color: #116341; color: white">
+												</div>
+											</div>
+										</div>
+									</span>
+
+								</th:block>
+
+								<span style="color: #00ff89;" th:utext="${successMessage}"></span>
 							</form>
 
 						</div>

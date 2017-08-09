@@ -9,4 +9,5 @@ import com.example.model.ReadingMaterial;
 @Repository("readingMaterialRepository")
 public interface ReadingMaterialRepository extends CrudRepository<ReadingMaterial, Long>{
 	ReadingMaterial findByReadingMaterialId(int id);
+	ReadingMaterial findByTitle(String title);
 }

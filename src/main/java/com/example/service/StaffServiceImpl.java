@@ -49,4 +49,10 @@ public class StaffServiceImpl implements StaffService {
 
 	}
 
+	@Override
+	public ReadingMaterial findReadingMaterialByName(String name) {
+		// TODO Auto-generated method stub
+		return readingMaterialRepository.findByTitle(name);
+	}
+
 }

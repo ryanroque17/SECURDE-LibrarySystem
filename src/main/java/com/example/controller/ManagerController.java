@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -83,8 +84,23 @@ public class ManagerController {
 	public ModelAndView editReadingMaterial() {
 		ModelAndView modelAndView = new ModelAndView();
 		ArrayList<ReadingMaterial> listReadingMaterials = managerService.getAllReadingMaterials();
-		modelAndView.addObject("newReadingMaterial", new ReadingMaterial());
+		modelAndView.addObject("readingMaterial", new ReadingMaterial());
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
+		modelAndView.addObject("hasSelected", "no");
+
+		modelAndView.setViewName("/employee/manager/edit");
+
+		return modelAndView;
+	}
+	@RequestMapping(value = "/employee/manager/edit/{title}", method = RequestMethod.POST)
+	public ModelAndView editSpecificReadingMaterial(@PathVariable String title) {
+		ModelAndView modelAndView = new ModelAndView();
+		ArrayList<ReadingMaterial> listReadingMaterials = managerService.getAllReadingMaterials();
+		ReadingMaterial readingMaterial = managerService.findReadingMaterialByName(title);
+		modelAndView.addObject("readingMaterial", readingMaterial);
+		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
+		modelAndView.addObject("hasSelected", "yes");
+
 		modelAndView.setViewName("/employee/manager/edit");
 
 		return modelAndView;
@@ -92,35 +108,18 @@ public class ManagerController {
 
 	@RequestMapping(value = "/employee/manager/edit", method = RequestMethod.POST)
 	public ModelAndView saveEditReadingMaterial(
-			@Valid @ModelAttribute("newReadingMaterial") ReadingMaterial readingMaterial, BindingResult bindingResult) {
+			@Valid @ModelAttribute("readingMaterial") ReadingMaterial readingMaterial, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
-		if (bindingResult.hasErrors()) {
-			modelAndView.setViewName("/employee/manager/edit");
-
-			for (Object object : bindingResult.getAllErrors()) {
-				if (object instanceof FieldError) {
-					FieldError fieldError = (FieldError) object;
-
-					System.out.println(
-							fieldError.getCode() + " " + fieldError.getDefaultMessage() + " " + fieldError.getField());
-				}
-
-				if (object instanceof ObjectError) {
-					ObjectError objectError = (ObjectError) object;
-
-					System.out.println(objectError.getCode());
-				}
-			}
-		} else {
-
+		
+			System.out.println(readingMaterial.getType() + " " + readingMaterial.getTitle());
 			managerService.editReadingMaterial(readingMaterial);
 			ArrayList<ReadingMaterial> listReadingMaterials = managerService.getAllReadingMaterials();
-
+			
 			modelAndView.addObject("successMessage", "A reading material has been edited successfully");
-			modelAndView.addObject("newReadingMaterial", new ReadingMaterial());
+			modelAndView.addObject("readingMaterial", new ReadingMaterial());
 			modelAndView.addObject("listReadingMaterials", listReadingMaterials);
 			modelAndView.setViewName("/employee/manager/edit");
-		}
+		
 		return modelAndView;
 	}
 
@@ -145,6 +144,8 @@ public class ManagerController {
 
 		modelAndView.addObject("successMessage", "A reading material has been deleted successfully");
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
+		modelAndView.addObject("hasSelected", "no");
+
 		modelAndView.setViewName("/employee/manager/delete");
 
 		return modelAndView;

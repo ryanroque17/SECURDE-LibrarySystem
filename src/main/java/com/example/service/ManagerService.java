@@ -9,6 +9,7 @@ import com.example.model.User;
 
 public interface ManagerService {
 	public ReadingMaterial findReadingMaterialById(int id);
+	public ReadingMaterial findReadingMaterialByName(String name);
 	public void saveReadingMaterial(ReadingMaterial readingMaterial);
 	public void editReadingMaterial(ReadingMaterial readingMaterial);
 	public void deleteReadingMaterial(int i);
