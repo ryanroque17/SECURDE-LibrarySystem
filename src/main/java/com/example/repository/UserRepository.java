@@ -11,5 +11,6 @@ import com.example.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 	 User findByEmail(String email);
 	 User findById(String id);
+	 ArrayList <User> findAll();
 	 ArrayList<User> findByActive(int active);
 }

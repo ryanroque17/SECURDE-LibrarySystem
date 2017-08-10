@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Staff - View Room Reservations</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/room.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var date_input=$('input[name="date"]'); //our date input has the name "date"
+  var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+  var options={
+    format: 'yyyy/mm/dd',
+    container: container,
+    todayHighlight: true,
+    autoclose: true,
+    orientation: "top"
+  };
+  date_input.datepicker(options);
+})
+</script>
+</head>
+
+<body th:background="@{/images/glass-background.jpg}"
+	style="background-size: 100%">
+	<nav class="navbar navbar-default navbar-inverse" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">DLSU SHS Library System</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a th:href="@{/employee/staff/home}">Home</a></li>
+					<li><a th:href="@{/employee/staff/manage}">Reading
+							Materials</a></li>
+					<li><a th:href="@{/employee/staff/manage}">Room
+							Reservations</a></li>
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><b><span th:utext="${userName}"></span></b>
+							<span class="caret"></span></a>
+						<ul id="login-dp" class="dropdown-menu">
+							<li>
+								<div class="row">
+
+									<div class="bottom text-center">
+										<form th:action="@{/logout}" method="get">
+											<button class="btn btn-md btn-danger btn-block" type="Submit">Logout</button>
+										</form>
+									</div>
+								</div>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<div class="row">
+			<form autocomplete="off" action="#" th:action="@{/employee/staff/room}"
+				th:object="${date}" method="post" class="form-horizontal"
+				role="form">
+				<p class="room">
+					Date: <input class="form-control" th:value="${date}" id="date"
+						name="date" placeholder="YYYY/MM/DD" type="text" /> Room: <select
+						id="roomId" name="roomId">
+						<option value="1">Room 1</option>
+						<option value="2">Room 2</option>
+						<option value="3">Room 3</option>
+						<option value="4">Room 4</option>
+						<option value="5">Room 5</option>
+
+					</select> <input type="submit" value="Submit">
+				</p>
+			</form>
+		</div>
+
+		<table id="example" class="display" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th class="room">Room Name</th>
+					<th class="room">6:00 - 8:00</th>
+					<th class="room">8:00 - 10:00</th>
+					<th class="room">10:00 - 12:00</th>
+					<th class="room">12:00 - 14:00</th>
+					<th class="room">14:00 - 16:00</th>
+					<th class="room">16:00 - 18:00</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td class="room" th:text = ${room.roomName}></td>
+					<td id="t1"></td>
+					<td id="t2"></td>
+					<td id="t3"></td>
+					<td id="t4"></td>
+					<td id="t5"></td>
+					<td id="t6"><script th:inline="javascript">
+								var roomReservations = [[${roomReservations}]];
+								$("#t2").text("FREE");$("#t3").text("FREE");$("#t4").text("FREE");
+								$("#t1").text("FREE");$("#t5").text("FREE");$("#t6").text("FREE");
+								var users = [[${users}]];
+								var userList = [];
+								
+								for(var i =0; i< users.length; i++){
+									console.log(users[i].id);
+									
+									userList[users[i].id] = users[i].email;
+								}
+									
+								for(var i =0; i< roomReservations.length; i++) {
+									console.log(userList[roomReservations[i].userId]);
+									
+									switch(roomReservations[i].startTime) {
+											case "6:00":  $("#t1").text(userList[roomReservations[i].userId]);break;
+											case "8:00":  $("#t2").text(userList[roomReservations[i].userId]);break;
+											case "10:00": $("#t3").text(userList[roomReservations[i].userId]);break;
+											case "12:00": $("#t4").text(userList[roomReservations[i].userId]);break;
+											case "14:00": $("#t5").text(userList[roomReservations[i].userId]);break;
+											case "16:00": $("#t6").text(userList[roomReservations[i].userId]);break;
+										
+									}
+								}
+							</script></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

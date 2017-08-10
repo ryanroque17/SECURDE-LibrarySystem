@@ -1,6 +1,9 @@
 package com.example.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -16,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.ReadingMaterial;
+import com.example.model.Room;
+import com.example.model.RoomReservation;
+import com.example.model.User;
 import com.example.service.StaffService;
 
 @Controller
@@ -144,6 +150,36 @@ public class StaffController {
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
 		modelAndView.setViewName("/employee/staff/delete");
 
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/employee/staff/room", method = RequestMethod.GET)
+	public ModelAndView viewRoomReservations() {
+		ModelAndView modelAndView = new ModelAndView();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date date = new Date();
+		ArrayList<User> users = staffService.getAllUsers();
+		ArrayList<RoomReservation> roomReservations = new ArrayList<RoomReservation>();
+		Room room = staffService.getRoomById("1");
+		modelAndView.addObject("users", users);
+		modelAndView.addObject("room", room);
+		modelAndView.addObject("date", dateFormat.format(date));
+		roomReservations.addAll(staffService.getAllRoomReservationByDateAndRoomId(dateFormat.format(date), room.getRoomId()));
+		modelAndView.addObject("roomReservations", roomReservations);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/employee/staff/room", method = RequestMethod.POST)
+	public ModelAndView viewRoomReservations(@RequestParam("date") String date, @RequestParam("roomId") String roomId) {
+		ModelAndView modelAndView = new ModelAndView();
+		Room room = staffService.getRoomById(roomId);
+		ArrayList<User> users = staffService.getAllUsers();
+		ArrayList<RoomReservation> roomReservations = new ArrayList<RoomReservation>();
+		modelAndView.addObject("users", users);
+		modelAndView.addObject("room", room);
+		modelAndView.addObject("date",date);
+		roomReservations.addAll(staffService.getAllRoomReservationByDateAndRoomId(date, roomId));
+		modelAndView.addObject("roomReservations", roomReservations);
 		return modelAndView;
 	}
 }

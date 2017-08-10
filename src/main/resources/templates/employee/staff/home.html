@@ -87,17 +87,20 @@
 							</div>
 						</a>
 					</form>
-					<a href="#" class="">
-						<div class="col-sm-4">
-							<div class="thumbnail">
-								<div class="caption">
-									<h4 class="options-heading" align="center">Override Existing Room Reservations</h4>
+					
+					<form id="registerButton" th:action="@{/employee/staff/room}" method="get">
+						<a th:href="@{/employee/staff/room}">
+							<div class="col-sm-4">
+								<div class="thumbnail">
+									<div class="caption">
+										<h4 class="options-heading" align="center">View Room Reservations</h4>
+									</div>
+									<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
+	
 								</div>
-								<img th:src="@{/images/searchRecord1.png}" alt="..." class="">
-
 							</div>
-						</div>
-					</a>
+						</a>
+					</form>
 					<div class="col-sm-2"></div>
 				</div>
 				<!--row -->

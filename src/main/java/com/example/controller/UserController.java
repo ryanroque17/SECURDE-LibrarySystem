@@ -137,6 +137,7 @@ public class UserController {
 		User user = userService.findUserByEmail(auth.getName());
 		Room room = userService.getRoomById("1");
 		ArrayList<RoomReservation> roomReservations = userService.getAllRoomReservationByDateAndRoomId(dateFormat.format(date), room.getRoomId());
+		System.out.println(roomReservations.size());
 		modelAndView.addObject("room", room);
 		modelAndView.addObject("roomReservations", roomReservations);
 		modelAndView.addObject("date", dateFormat.format(date));
@@ -169,7 +170,7 @@ public class UserController {
 		modelAndView.addObject("userId", user.getId());
 		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");
-		modelAndView.setViewName("library/room/reserve");
+		modelAndView.setViewName("/library/room");
 		return modelAndView;
 	}
 }
