@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
+import com.example.model.RoomReservation;
 import com.example.service.ManagerService;
 
 @Controller
@@ -32,6 +33,14 @@ public class ManagerController {
 	public ModelAndView manageReadingMaterials() {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("/employee/manager/manage");
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/employee/manager/override", method = RequestMethod.GET)
+	public ModelAndView manageReservation() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("/employee/manager/override");
 
 		return modelAndView;
 	}
@@ -150,27 +159,53 @@ public class ManagerController {
 
 		return modelAndView;
 	}
-	@RequestMapping(value = "/employee/manager/override", method = RequestMethod.GET)
-	public ModelAndView overrideReservation() {
+	
+	@RequestMapping(value = "/employee/manager/overrideMaterial", method = RequestMethod.GET)
+	public ModelAndView overrideMaterialReservation() {
 		ModelAndView modelAndView = new ModelAndView();
-		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllReadingMaterialReservation();
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllCurrentReadingMaterialReservation();
 		modelAndView.addObject("listReadingMaterialReservation", listReadingMaterialReservation);
 
-		modelAndView.setViewName("/employee/manager/override");
+		modelAndView.setViewName("/employee/manager/overrideMaterial");
 
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/employee/manager/override", method = RequestMethod.POST)
-	public ModelAndView overrideReservationFinish(@RequestParam("deleteId") String deleteId) {
+	@RequestMapping(value = "/employee/manager/overrideMaterial", method = RequestMethod.POST)
+	public ModelAndView overrideMaterialReservationFinish(@RequestParam("deleteId") String deleteId) {
 		ModelAndView modelAndView = new ModelAndView();
 		System.out.println("OVERRIDE POST");
 		managerService.overrideReservation(deleteId);
-		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllReadingMaterialReservation();
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllCurrentReadingMaterialReservation();
 
 		modelAndView.addObject("successMessage", "A reservation has been overriden successfully");
 		modelAndView.addObject("listReadingMaterialReservation", listReadingMaterialReservation);
-		modelAndView.setViewName("/employee/manager/override");
+		modelAndView.setViewName("/employee/manager/overrideMaterial");
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/employee/manager/overrideRoom", method = RequestMethod.GET)
+	public ModelAndView overrideRoomReservation() {
+		ModelAndView modelAndView = new ModelAndView();
+		ArrayList<RoomReservation> listRoomReservation = managerService.getAllRoomReservation();
+		modelAndView.addObject("listRoomReservation", listRoomReservation);
+
+		modelAndView.setViewName("/employee/manager/overrideRoom");
+
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "/employee/manager/overrideRoom", method = RequestMethod.POST)
+	public ModelAndView overrideRoomReservationFinish(@RequestParam("deleteId") String deleteId) {
+		ModelAndView modelAndView = new ModelAndView();
+		System.out.println("OVERRIDE POST");
+		managerService.overrideReservation(deleteId);
+		ArrayList<RoomReservation> listRoomReservation = managerService.getAllRoomReservation();
+
+		modelAndView.addObject("successMessage", "A reservation has been overriden successfully");
+		modelAndView.addObject("listRoomReservation", listRoomReservation);
+		modelAndView.setViewName("/employee/manager/overrideRoom");
 
 		return modelAndView;
 	}

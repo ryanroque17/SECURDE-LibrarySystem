@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
+import com.example.model.RoomReservation;
 import com.example.model.User;
 
 
@@ -17,6 +18,8 @@ public interface ManagerService {
 	public ArrayList<ReadingMaterial> getAllReadingMaterials();
 	public ArrayList<ReadingMaterialReservation> getAllReadingMaterialReservation();
 	public ArrayList<ReadingMaterialReservation> getAllCurrentReadingMaterialReservation();
+	public ArrayList<RoomReservation> getAllRoomReservation();
+	public ArrayList<RoomReservation> getAllCurrentRoomReservation();
 
 	public void exportLogs();
 }
