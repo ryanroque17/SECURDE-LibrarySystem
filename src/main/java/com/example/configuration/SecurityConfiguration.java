@@ -32,6 +32,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private SimpleAuthenticationSuccessHandler successHandler;
+	
+	@Autowired
+	private SimpleAuthenticationFailureHandler failureHandler;
+	//new SimpleAuthenticationFailureHandler("/login?error=true")
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -45,22 +49,26 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.
 		headers().xssProtection().block(false);
 		http.
-		csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/login")).and().
-		authorizeRequests()
-		.antMatchers("/library/**").hasAnyAuthority("STUDENT", "FACULTY")
-		.antMatchers("/employee/staff/**").hasAnyAuthority("LIBRARY_STAFF")
-		.antMatchers("/employee/manager/**").hasAnyAuthority("LIBRARY_MANAGER")
-		.antMatchers("/admin/**").hasAnyAuthority("ADMIN")
-		.and().formLogin().successHandler(successHandler)
-		.loginPage("/login").and().logout().permitAll().and()
-		.csrf().disable().formLogin()
-		.loginPage("/login").failureUrl("/login?error=true")
-		.usernameParameter("email")
-		.passwordParameter("password")
-		.and().logout()
-		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-		.logoutSuccessUrl("/").and().exceptionHandling()
-		.accessDeniedPage("/access-denied");;
+		csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/login")).and()
+		
+		.authorizeRequests()
+			.antMatchers("/library/**").hasAnyAuthority("STUDENT", "FACULTY")
+			.antMatchers("/employee/staff/**").hasAnyAuthority("LIBRARY_STAFF")
+			.antMatchers("/employee/manager/**").hasAnyAuthority("LIBRARY_MANAGER")
+			.antMatchers("/admin/**").hasAnyAuthority("ADMIN")
+			.and()
+		
+		.formLogin()
+			.loginPage("/login")
+			.usernameParameter("email")
+			.passwordParameter("password")
+			.successHandler(successHandler)
+			.failureHandler(failureHandler)
+			.and()
+		.logout()
+			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+			.logoutSuccessUrl("/").and().exceptionHandling()
+			.accessDeniedPage("/access-denied");;
 		
 	}
 
