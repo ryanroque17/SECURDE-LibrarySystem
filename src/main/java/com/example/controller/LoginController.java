@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,9 +56,16 @@ public class LoginController {
 		System.out.println("Ads");
 		if (userExists != null) {
 			bindingResult
-					.rejectValue("email", "error.user",
+					.rejectValue("email", "error.user", 
 							"There is already a user registered with the email provided");
+		} 
+		else if (!userService.passwordValidator(user.getPassword())) {
+			bindingResult
+					.rejectValue("password", "password.user", 
+							"Password strength is weak");
 		}
+		
+		
 		if (bindingResult.hasErrors()) {
 			if(role.equals("user"))
 				modelAndView.setViewName("registration");
@@ -76,7 +85,8 @@ public class LoginController {
 			        System.out.println(objectError.getCode());
 			    }
 			}
-		} else {
+		}
+		else {
 			
 			userService.saveUser(user, role);
 			modelAndView.addObject("successMessage", "User has been registered successfully");
@@ -151,5 +161,4 @@ public class LoginController {
 		modelAndView.setViewName("employee/staff/home");
 		return modelAndView;
 	}
-
 }

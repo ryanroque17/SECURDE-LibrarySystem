@@ -3,10 +3,13 @@ package com.example.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
@@ -131,4 +134,23 @@ public class UserServiceImpl implements UserService{
 		return null;
 	}
 	
+	@Override
+	public boolean passwordValidator(String password) {	
+		if(password.length()>=6 && !StringUtils.containsWhitespace(password))
+	    {
+	        Pattern Upperletter = Pattern.compile("[A-z]");
+	        Pattern Lowerletter = Pattern.compile("[a-z]");
+	        Pattern digit = Pattern.compile("[0-9]");
+	        Pattern special = Pattern.compile ("[!@#$%&*()_+=|<>?{}\\[\\]~-]");
+
+	        Matcher hasUpperLetter = Upperletter.matcher(password);
+	        Matcher hasLowerLetter = Lowerletter.matcher(password);
+	        Matcher hasDigit = digit.matcher(password);
+	        Matcher hasSpecial = special.matcher(password);
+	        return hasUpperLetter.find() && hasLowerLetter.find() && hasDigit.find() && hasSpecial.find();
+
+	    }
+	    else
+	    	return false;
+	}
 }
