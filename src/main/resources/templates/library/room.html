@@ -133,6 +133,7 @@ $(document).ready(function(){
 							<button id = "t6" type="submit" value="16:00 - 18:00" name ="time">16:00 - 18:00</button>
 							<script th:inline="javascript">
 								var roomReservations = [[${roomReservations}]];
+								console.log(roomReservations.length)
 								for(var i =0; i< roomReservations.length; i++) {
 									console.log(i);
 									switch(roomReservations[i].startTime) {

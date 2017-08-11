@@ -100,7 +100,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/admin/home", method = RequestMethod.GET)
 	public ModelAndView adminHome(HttpSession session){
-		session.setMaxInactiveInterval(30);
+		session.setMaxInactiveInterval(120);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -114,7 +114,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/library/home", method = RequestMethod.GET)
 	public ModelAndView libraryHome(HttpSession session){
-		session.setMaxInactiveInterval(30);
+		session.setMaxInactiveInterval(120);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
@@ -141,7 +141,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/employee/manager/home", method = RequestMethod.GET)
 	public ModelAndView managerHome(HttpSession session){
-		session.setMaxInactiveInterval(30);
+		session.setMaxInactiveInterval(120);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
@@ -154,7 +154,7 @@ public class LoginController {
 	
 	@RequestMapping(value="/employee/staff/home", method = RequestMethod.GET)
 	public ModelAndView staffHome(HttpSession session){
-		session.setMaxInactiveInterval(30);
+		session.setMaxInactiveInterval(120);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		

@@ -111,7 +111,6 @@ public class UserServiceImpl implements UserService{
 	public ArrayList<RoomReservation> getAllRoomReservationByDateAndRoomId(String date, String roomId) {
 		ArrayList<RoomReservation> listRoomReservation = (ArrayList<RoomReservation>) roomReservationRepository.findAll();
 		ArrayList<RoomReservation> roomReservations = new ArrayList<RoomReservation>();
-		date = date.replace("/", "-");
 		for(int i =0; i< listRoomReservation.size(); i++) 
 		{
 			System.out.println("AAA "  +i);
