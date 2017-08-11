@@ -31,7 +31,14 @@ public class LoginController {
 	private UserService userService;
 	@Autowired
 	private ManagerService managerService;
-
+	
+	@RequestMapping(value="/error", method = RequestMethod.GET)
+	public ModelAndView error(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("error");
+		return modelAndView;
+	}
+	
 	@RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
 	public ModelAndView login(){
 		ModelAndView modelAndView = new ModelAndView();
