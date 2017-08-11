@@ -24,6 +24,9 @@ import com.example.model.User;
 import com.example.service.ManagerService;
 import com.example.service.UserService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class LoginController {
 	
@@ -36,6 +39,8 @@ public class LoginController {
 	public ModelAndView error(){
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("error");
+		Logger log = LoggerFactory.getLogger(LoginController.class+"error()");
+		log.info("404 Not Found");
 		return modelAndView;
 	}
 	
@@ -95,6 +100,8 @@ public class LoginController {
 		else {
 			
 			userService.saveUser(user, role);
+			Logger log = LoggerFactory.getLogger(LoginController.class+"-createNewUser");
+			log.info(user.getEmail() + " account is created.");
 			modelAndView.addObject("successMessage", "User has been registered successfully");
 			modelAndView.addObject("newUser", new User());
 			if(role.equals("user"))

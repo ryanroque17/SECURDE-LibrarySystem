@@ -31,6 +31,9 @@ import com.example.model.RoomReservation;
 import com.example.model.User;
 import com.example.service.UserService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class UserController {
 	@Autowired
@@ -67,7 +70,8 @@ public class UserController {
 			readingMaterialReservation.setUserId(userId);
 			readingMaterialReservation.setReadingMaterialId(readingMaterialId);
 			userService.reserveReadingMaterial(readingMaterial, readingMaterialReservation);
-
+			Logger log = LoggerFactory.getLogger(UserController.class+" - saveReserveReadingMaterial()");
+			log.info(readingMaterial.getTitle() + " is reserved on " + reservationDate);
 			modelAndView.addObject("successMessage", "A reading material has been reserved successfully");
 			modelAndView.addObject("readingMaterial", readingMaterial);
 			modelAndView.addObject("reservation", new ReadingMaterialReservation());
@@ -100,8 +104,10 @@ public class UserController {
 		review.setUserId(userId);
 		review.setReadingMaterialId(readingMaterialId);
 		userService.addReview(review);
-
+		
 		ReadingMaterial readingMaterial = userService.findReadingMaterialById(readingMaterialId);
+		Logger log = LoggerFactory.getLogger(UserController.class+" - addReserveReadingMaterial()");
+		log.info(readingMaterial.getTitle() + " is reviewed");
 		modelAndView.addObject("readingMaterial", readingMaterial);
 		modelAndView.addObject("reviewEntry", new Review());
 		modelAndView.addObject("userId", userId);
@@ -123,7 +129,6 @@ public class UserController {
 		modelAndView.addObject("date", date);
 		modelAndView.addObject("userId", user.getId());
 		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");
 		modelAndView.setViewName("library/room");
 		return modelAndView;
 	}
@@ -143,7 +148,6 @@ public class UserController {
 		modelAndView.addObject("date", dateFormat.format(date));
 		modelAndView.addObject("userId", user.getId());
 		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
-		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");
 		modelAndView.setViewName("library/room");
 		return modelAndView;
 	}
@@ -164,6 +168,8 @@ public class UserController {
 		userService.reserveRoom(roomReservation);
 		Room room = userService.getRoomById(roomId);
 		ArrayList<RoomReservation> roomReservations = userService.getAllRoomReservationByDateAndRoomId(date, roomId);
+		Logger log = LoggerFactory.getLogger(UserController.class+" - saveReserveReadingMaterial()");
+		log.info(roomId + " is reserved on " + roomReservation.getStartTime());
 		modelAndView.addObject("room", room);
 		modelAndView.addObject("roomReservations", roomReservations);
 		modelAndView.addObject("date", date);

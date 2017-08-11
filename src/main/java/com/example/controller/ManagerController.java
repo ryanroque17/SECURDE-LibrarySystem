@@ -22,6 +22,10 @@ import com.example.model.ReadingMaterialReservation;
 import com.example.model.RoomReservation;
 import com.example.service.ManagerService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 @Controller
 public class ManagerController {
 
@@ -49,6 +53,7 @@ public class ManagerController {
 	public ModelAndView createReadingMaterial() {
 		ModelAndView modelAndView = new ModelAndView();
 		ReadingMaterial readingMaterial = new ReadingMaterial();
+		
 		modelAndView.addObject("newReadingMaterial", readingMaterial);
 		modelAndView.setViewName("/employee/manager/create");
 
@@ -80,7 +85,8 @@ public class ManagerController {
 				}
 			}
 		} else {
-
+			Logger log = LoggerFactory.getLogger(ManagerController.class+" - createNewReadingMaterial()");
+			log.info(readingMaterial.getTitle() + " is created.");
 			managerService.saveReadingMaterial(readingMaterial);
 			modelAndView.addObject("successMessage", "A reading material has been added successfully");
 			modelAndView.addObject("newReadingMaterial", new ReadingMaterial());
@@ -123,7 +129,8 @@ public class ManagerController {
 			System.out.println(readingMaterial.getType() + " " + readingMaterial.getTitle());
 			managerService.editReadingMaterial(readingMaterial);
 			ArrayList<ReadingMaterial> listReadingMaterials = managerService.getAllReadingMaterials();
-			
+			Logger log = LoggerFactory.getLogger(ManagerController.class+" - saveEditReadingMaterial()");
+			log.info(readingMaterial.getTitle() + " is edited.");
 			modelAndView.addObject("successMessage", "A reading material has been edited successfully");
 			modelAndView.addObject("readingMaterial", new ReadingMaterial());
 			modelAndView.addObject("listReadingMaterials", listReadingMaterials);
@@ -150,7 +157,9 @@ public class ManagerController {
 
 		managerService.deleteReadingMaterial(deleteId);
 		ArrayList<ReadingMaterial> listReadingMaterials = managerService.getAllReadingMaterials();
-
+		ReadingMaterial readingMaterial = managerService.findReadingMaterialById(deleteId);
+		Logger log = LoggerFactory.getLogger(ManagerController.class+" - deleteReadingMaterial()");
+		log.info(readingMaterial.getTitle() + " is deleted.");
 		modelAndView.addObject("successMessage", "A reading material has been deleted successfully");
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
 		modelAndView.addObject("hasSelected", "no");
@@ -177,7 +186,8 @@ public class ManagerController {
 		System.out.println("OVERRIDE POST");
 		managerService.overrideReservation(deleteId);
 		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllCurrentReadingMaterialReservation();
-
+		Logger log = LoggerFactory.getLogger(ManagerController.class+" - overrideMaterialReservationFinish()");
+		log.info(deleteId + " reading material reservation is overriden.");
 		modelAndView.addObject("successMessage", "A reservation has been overriden successfully");
 		modelAndView.addObject("listReadingMaterialReservation", listReadingMaterialReservation);
 		modelAndView.setViewName("/employee/manager/overrideMaterial");
@@ -202,6 +212,9 @@ public class ManagerController {
 		System.out.println("OVERRIDE POST");
 		managerService.overrideReservation(deleteId);
 		ArrayList<RoomReservation> listRoomReservation = managerService.getAllRoomReservation();
+		ArrayList<ReadingMaterialReservation> listReadingMaterialReservation = managerService.getAllCurrentReadingMaterialReservation();
+		Logger log = LoggerFactory.getLogger(ManagerController.class+" - overrideRoomReservationFinish()");
+		log.info(deleteId + " room reservation is overriden.");
 
 		modelAndView.addObject("successMessage", "A reservation has been overriden successfully");
 		modelAndView.addObject("listRoomReservation", listRoomReservation);

@@ -26,6 +26,9 @@ import com.example.model.RoomReservation;
 import com.example.model.User;
 import com.example.service.StaffService;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class StaffController {
 
@@ -75,8 +78,10 @@ public class StaffController {
 				}
 			}
 		} else {
-
+			
 			staffService.saveReadingMaterial(readingMaterial);
+			Logger log = LoggerFactory.getLogger(StaffController.class+" - createNewReadingMaterial()");
+			log.info(readingMaterial.getTitle() + " is created.");
 			modelAndView.addObject("successMessage", "A reading material has been added successfully");
 			modelAndView.addObject("newReadingMaterial", new ReadingMaterial());
 			modelAndView.setViewName("/employee/staff/create");
@@ -118,7 +123,8 @@ public class StaffController {
 			System.out.println(readingMaterial.getType() + " " + readingMaterial.getTitle());
 			staffService.editReadingMaterial(readingMaterial);
 			ArrayList<ReadingMaterial> listReadingMaterials = staffService.getAllReadingMaterials();
-			
+			Logger log = LoggerFactory.getLogger(StaffController.class+" - saveEditReadingMaterial()");
+			log.info(readingMaterial.getTitle() + " is edited.");
 			modelAndView.addObject("successMessage", "A reading material has been edited successfully");
 			modelAndView.addObject("readingMaterial", new ReadingMaterial());
 			modelAndView.addObject("listReadingMaterials", listReadingMaterials);
@@ -145,7 +151,9 @@ public class StaffController {
 
 		staffService.deleteReadingMaterial(deleteId);
 		ArrayList<ReadingMaterial> listReadingMaterials = staffService.getAllReadingMaterials();
-
+		ReadingMaterial readingMaterial = staffService.findReadingMaterialById(deleteId);
+		Logger log = LoggerFactory.getLogger(StaffController.class+" - deleteReadingMaterial()");
+		log.info(readingMaterial.getTitle() + " is deleted.");
 		modelAndView.addObject("successMessage", "A reading material has been deleted successfully");
 		modelAndView.addObject("listReadingMaterials", listReadingMaterials);
 		modelAndView.setViewName("/employee/staff/delete");
@@ -179,6 +187,8 @@ public class StaffController {
 		modelAndView.addObject("room", room);
 		modelAndView.addObject("date",date);
 		roomReservations.addAll(staffService.getAllRoomReservationByDateAndRoomId(date, roomId));
+		Logger log = LoggerFactory.getLogger(StaffController.class+" - viewRoomReservations()");
+		log.info("Available rooms of " + roomId + " on "+ date + " is viewed.");
 		modelAndView.addObject("roomReservations", roomReservations);
 		return modelAndView;
 	}

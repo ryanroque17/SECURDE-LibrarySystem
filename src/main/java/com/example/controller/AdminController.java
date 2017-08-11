@@ -19,6 +19,10 @@ import com.example.model.ReadingMaterial;
 import com.example.model.User;
 import com.example.service.AdminService;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Controller
 public class AdminController {
 	@Autowired
@@ -70,6 +74,8 @@ public class AdminController {
 		} else {
 			
 			adminService.saveUser(user, role);
+			Logger log = LoggerFactory.getLogger(AdminController.class+" - createNewUser()");
+			log.info(user.getEmail() + " account is created.");
 			modelAndView.addObject("successMessage", "User has been registered successfully");
 			modelAndView.addObject("newUser", new User());
 			modelAndView.setViewName("/admin/create");
@@ -81,7 +87,8 @@ public class AdminController {
 	public ModelAndView unlockAccount(){
 		ModelAndView modelAndView = new ModelAndView();
 		ArrayList<User> user = adminService.getAllInactiveUsers();
-		System.out.println("inactive: " +user.size());
+		
+
 		modelAndView.addObject("inactiveUsers", user);
 		modelAndView.setViewName("/admin/unlock");
 		
@@ -93,6 +100,8 @@ public class AdminController {
 		
 			User user = adminService.findUserById(userId);
 			adminService.unlockUser(user);
+			Logger log = LoggerFactory.getLogger(AdminController.class+" - unlockAccount()");
+			log.info(user.getEmail() + " account is unlocked.");
 			ArrayList<User> inactiveUsers = adminService.getAllInactiveUsers();
 
 			modelAndView.addObject("successMessage", "A user has been unlocked");
