@@ -137,7 +137,7 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public boolean passwordValidator(String password) {	
-		if(password.length()>=6 && !StringUtils.containsWhitespace(password))
+		if(password.length()>=7 && !StringUtils.containsWhitespace(password))
 	    {
 	        Pattern Upperletter = Pattern.compile("[A-z]");
 	        Pattern Lowerletter = Pattern.compile("[a-z]");

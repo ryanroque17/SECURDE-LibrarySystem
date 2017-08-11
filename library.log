@@ -847,3 +847,7 @@ Using default security password: 44ee72a1-bdda-4f50-ac3e-a03634da7897
 2017-08-11 15:51:21 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
 2017-08-11 15:51:21 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
 2017-08-11 15:51:21 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2017-08-11 16:14:27 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2017-08-11 16:14:27 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:987 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Fri Aug 11 15:51:13 SGT 2017]; root of context hierarchy
+2017-08-11 16:14:27 INFO  o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2017-08-11 16:14:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:551 - Closing JPA EntityManagerFactory for persistence unit 'default'

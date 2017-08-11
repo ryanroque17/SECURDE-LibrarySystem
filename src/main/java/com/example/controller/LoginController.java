@@ -73,7 +73,7 @@ public class LoginController {
 		else if (!userService.passwordValidator(user.getPassword())) {
 			bindingResult
 					.rejectValue("password", "password.user", 
-							"Password strength is weak");
+							"Password length must be greater than 8; contains at least one lower, upper, numeric, special character");
 		}
 		
 		
