@@ -33,7 +33,7 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
 		Date today = new Date();
 		Collection <GrantedAuthority> authorities = (Collection<GrantedAuthority>) authentication.getAuthorities();
 			
-			if(user.getlockout_time() != null && user.getlockout_time().after(today))
+			if(user.getlockout_time() != null && user.getlockout_time().after(new Date()))
 			{
 				String message = "Account has been lockout";
 				System.out.println(message);

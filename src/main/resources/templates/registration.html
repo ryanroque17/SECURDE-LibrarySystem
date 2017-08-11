@@ -12,6 +12,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script th:src="@{/js/login.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
 
 </head>
 <body th:background="@{/images/henrysybg.jpg}"
@@ -77,12 +78,17 @@
 										type="text" th:field="*{email}" placeholder="Email"
 										class="form-control" />
 								</div>
-								<div class="form-group">
+								
+								<section class="form-group">
 									<label style="color:#FF1C19" th:if="${#fields.hasErrors('password')}"
 										th:errors="*{password}" class="validation-message"></label> <input
 										type="password" th:field="*{password}" placeholder="Password"
-										class="form-control" />
-								</div>
+										class="form-control" id = "password", name="password"/>
+										
+									<meter max="4" id="password-strength-meter"></meter>
+									<p id="password-strength-text"></p>
+								</section>
+								
 								<div class="form-group">
 									<label style="color:#FF1C19" th:if="${#fields.hasErrors('secretQuestion')}"
 										th:errors="*{secretQuestion}" class="validation-message"></label>
