@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -100,7 +99,8 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/admin/home", method = RequestMethod.GET)
-	public ModelAndView adminHome(){
+	public ModelAndView adminHome(HttpSession session){
+		session.setMaxInactiveInterval(30);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -113,7 +113,8 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/library/home", method = RequestMethod.GET)
-	public ModelAndView libraryHome(){
+	public ModelAndView libraryHome(HttpSession session){
+		session.setMaxInactiveInterval(30);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());
@@ -139,7 +140,8 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/employee/manager/home", method = RequestMethod.GET)
-	public ModelAndView managerHome(){
+	public ModelAndView managerHome(HttpSession session){
+		session.setMaxInactiveInterval(30);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
@@ -151,7 +153,8 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/employee/staff/home", method = RequestMethod.GET)
-	public ModelAndView staffHome(){
+	public ModelAndView staffHome(HttpSession session){
+		session.setMaxInactiveInterval(30);
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		
