@@ -62,6 +62,12 @@ public class StaffServiceImpl implements StaffService {
 	}
 
 	@Override
+	public ReadingMaterial findReadingMaterialByName(String name) {
+		// TODO Auto-generated method stub
+		return readingMaterialRepository.findByTitle(name);
+	}
+	
+	@Override
 	public ArrayList<RoomReservation> getAllRoomReservationByDateAndRoomId(String date, String roomId) {
 		ArrayList<RoomReservation> listRoomReservation = (ArrayList<RoomReservation>) roomReservationRepository.findAll();
 		ArrayList<RoomReservation> roomReservations = new ArrayList<RoomReservation>();

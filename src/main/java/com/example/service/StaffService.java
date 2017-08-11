@@ -1,3 +1,4 @@
+
 package com.example.service;
 
 import java.util.ArrayList;
@@ -10,6 +11,8 @@ import com.example.model.User;
 
 public interface StaffService {
 	public ReadingMaterial findReadingMaterialById(int id);
+	public ReadingMaterial findReadingMaterialByName(String name);
+
 	public void saveReadingMaterial(ReadingMaterial readingMaterial);
 	public void editReadingMaterial(ReadingMaterial readingMaterial);
 	public void deleteReadingMaterial(int i);

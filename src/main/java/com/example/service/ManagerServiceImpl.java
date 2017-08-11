@@ -8,8 +8,11 @@ import org.springframework.stereotype.Service;
 
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
+import com.example.model.RoomReservation;
 import com.example.repository.ReadingMaterialRepository;
 import com.example.repository.ReadingMaterialReservationRepository;
+import com.example.repository.RoomRepository;
+import com.example.repository.RoomReservationRepository;
 
 @Service("managerService")
 public class ManagerServiceImpl implements ManagerService {
@@ -18,6 +21,10 @@ public class ManagerServiceImpl implements ManagerService {
 	private ReadingMaterialRepository readingMaterialRepository;
 	@Autowired
 	private ReadingMaterialReservationRepository readingMaterialReservationRepository;
+	@Autowired
+	private RoomRepository roomMaterialRepository;
+	@Autowired
+	private RoomReservationRepository roomReservationRepository;
 	
 	@Override
 	public void saveReadingMaterial(ReadingMaterial readingMaterial) {
@@ -78,6 +85,30 @@ public class ManagerServiceImpl implements ManagerService {
 		return currentReadingMaterialReservation;
 	}
 
-	
+	@Override
+	public ReadingMaterial findReadingMaterialByName(String name) {
+		// TODO Auto-generated method stub
+		return readingMaterialRepository.findByTitle(name);
+	}
 
+	@Override
+	public ArrayList<RoomReservation> getAllRoomReservation(){
+		ArrayList<RoomReservation> listRoomReservation = (ArrayList<RoomReservation>) roomReservationRepository.findAll();
+		return listRoomReservation;
+	}
+	
+	@Override
+	public ArrayList<RoomReservation> getAllCurrentRoomReservation(){
+		ArrayList<RoomReservation> listRoomReservation = (ArrayList<RoomReservation>) roomReservationRepository.findAll();
+		ArrayList<RoomReservation> listCurrentRoomReservation = new ArrayList<RoomReservation>();
+		Date today = new Date();
+
+//		for(int i=0; i<listRoomReservation.size();i++){
+//			if(listRoomReservation.get(i).getReturnDate().after(today)){
+//				listCurrentRoomReservation.add(listCurrentRoomReservation.get(i));
+//			}
+//		}
+		return listCurrentRoomReservation;
+	}
+	
 }

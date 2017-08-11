@@ -20,5 +20,5 @@ public interface UserService {
 	public Room getRoomById(String roomId);
 	public ArrayList<Room> getAllRooms();
 	public void addReview(Review review);
-
+	public boolean passwordValidator(String password);
 }
