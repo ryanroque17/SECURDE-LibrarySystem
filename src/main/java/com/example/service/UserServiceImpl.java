@@ -2,6 +2,8 @@ package com.example.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -151,5 +153,26 @@ public class UserServiceImpl implements UserService{
 	    }
 	    else
 	    	return false;
+	}
+	
+	@Override
+	public void recordLoginFailure(User user) {
+		String email = user.getEmail();
+		Calendar date = Calendar.getInstance();
+		long t= date.getTimeInMillis();
+		
+		if(user != null)
+		{
+			user.incrementlogin_attempts();
+			if(user.getlogin_attempts() >= 2)
+			{
+				Date lockout = new Date(t + (2 * 60000));
+				user.setlockout_time(lockout);
+			}
+			
+			userRepository.save(user);
+			user = userRepository.findByEmail(email);
+			System.out.println(user.getEmail() + "/ " + user.getlogin_attempts() + " : " + user.getlockout_time());
+		}
 	}
 }

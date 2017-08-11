@@ -2,12 +2,14 @@ package com.example.configuration;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -22,8 +24,13 @@ import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 
+import com.example.model.User;
+import com.example.service.UserService;
+
 @Component
 public class SimpleAuthenticationFailureHandler implements AuthenticationFailureHandler{
+	@Autowired
+	private UserService userService;
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 	
 //	public SimpleAuthenticationFailureHandler (String defaultFailureUrl) {
@@ -34,29 +41,24 @@ public class SimpleAuthenticationFailureHandler implements AuthenticationFailure
 	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
 			throws IOException, ServletException {
 		String message = "";
+		Date today = new Date();
+		User user = userService.findUserByEmail(request.getParameter("email"));
 
-	    if(exception instanceof UsernameNotFoundException) {
-	        message = "UsernameNotFoundException";
-	    } else if(exception instanceof AuthenticationCredentialsNotFoundException) {
-	        message = "AuthenticationCredentialsNotFoundException";
-	    }else if(exception instanceof InsufficientAuthenticationException) {
-	        message = "InsufficientAuthenticationException";
-	    }else if(exception instanceof AccountExpiredException) {
-	        message = "AccountExpiredException";
-	    }else if(exception instanceof CredentialsExpiredException) {
-	        message = "CredentialsExpiredException";
-	    }else if(exception instanceof DisabledException) {
-	        message = "DisabledException";
-	    }else if(exception instanceof LockedException) {
-	        message = "LockedException";
-	    }else if(exception instanceof BadCredentialsException) {
+		if(user.getlockout_time() != null && user.getlockout_time().after(today)) {
+			message = "Account has been lockout";
+			redirectStrategy.sendRedirect(request, response, "/login?error=true");
+		}
+		else if(exception instanceof BadCredentialsException) {
 	        message = "BadCredentialsException";
-	    }else{
+	        userService.recordLoginFailure(user);
+	        redirectStrategy.sendRedirect(request, response, "/login?error=true");
+	    }
+		else{
 	        message = exception.getMessage();
 	    }
+	    
 	    System.out.println(message);
-	    final HttpSession session = request.getSession();
-	    session.setAttribute("errorMessage", message);
-	    redirectStrategy.sendRedirect(request, response, "/login?error="+message);
+//	    final HttpSession session = request.getSession();
+//	    session.setAttribute("errorMessage", message);
 	}
 }

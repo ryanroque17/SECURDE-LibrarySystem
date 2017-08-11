@@ -1,5 +1,6 @@
 package com.example.model;
 
+import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -56,6 +57,10 @@ public class User {
 	private String secretQuestionAnswer;
 	@Column(name = "active")
 	private int active;
+	@Column(name = "login_attempts")
+	private int login_attempts;
+	@Column(name = "lockout_time")
+	private Date lockout_time;
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
@@ -156,7 +161,23 @@ public class User {
 		this.type = type;
 	}
 	
-	
-	
+	public int getlogin_attempts() {
+		return login_attempts;
+	}
 
+	public void setlogin_attempts(int login_attempts) {
+		this.login_attempts = login_attempts;
+	}
+	
+	public void incrementlogin_attempts() {
+		this.login_attempts++;
+	}
+
+	public Date getlockout_time() {
+		return lockout_time;
+	}
+
+	public void setlockout_time(Date lockout_time) {
+		this.lockout_time = lockout_time;
+	}
 }

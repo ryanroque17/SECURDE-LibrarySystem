@@ -21,4 +21,5 @@ public interface UserService {
 	public ArrayList<Room> getAllRooms();
 	public void addReview(Review review);
 	public boolean passwordValidator(String password);
+	public void recordLoginFailure(User user);
 }
