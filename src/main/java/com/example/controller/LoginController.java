@@ -21,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.model.User;
+import com.example.service.AccountService;
 import com.example.service.ManagerService;
 import com.example.service.UserService;
 
@@ -34,6 +35,8 @@ public class LoginController {
 	private UserService userService;
 	@Autowired
 	private ManagerService managerService;
+	@Autowired
+	private AccountService accountService;
 	
 	@RequestMapping(value="/error", method = RequestMethod.GET)
 	public ModelAndView error(){
@@ -57,6 +60,84 @@ public class LoginController {
 		User user = new User();
 		modelAndView.addObject("newUser", user);
 		modelAndView.setViewName("registration");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/forgotPassword", method = RequestMethod.GET)
+	public ModelAndView forgotPassword(){
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("forgotPassword");
+		return modelAndView;
+	}
+	
+
+	@RequestMapping(value="/forgotPassword", method = RequestMethod.POST)
+	public ModelAndView forgotPasswordPost(@RequestParam String email){
+		ModelAndView modelAndView = new ModelAndView();
+
+		User user = userService.findUserByEmail(email);
+		if (user == null) {
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info("Email is incorrect.");
+			modelAndView.addObject("successMessage", "There is no user registered with the email provided");
+			modelAndView.setViewName("forgotPassword");
+
+
+		}else{
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info("Email is correct.");
+			modelAndView.addObject("user", user);
+			modelAndView.setViewName("secretAnswer");
+
+		}
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/forgotPassword/secretAnswer", method = RequestMethod.POST)
+	public ModelAndView secretAnswer(@RequestParam String answer, @RequestParam int userId){
+		System.out.println("AW");
+		ModelAndView modelAndView = new ModelAndView();
+		User user = userService.findUserByUserId(Integer.toString(userId));
+		if(!user.getSecretQuestionAnswer().equals(answer)){
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info(user.getEmail() + " secret answer is incorrect.");
+			modelAndView.addObject("successMessage", "Secret answer is incorrect");
+			modelAndView.addObject("user", user);
+
+			modelAndView.setViewName("secretAnswer");
+
+		}else{
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info(user.getEmail() + " secret answer is correct.");
+			modelAndView.addObject("user", user);
+
+			modelAndView.setViewName("changePassword");
+
+		}
+
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/forgotPassword/changePassword", method = RequestMethod.POST)
+	public ModelAndView changePassword(@RequestParam String currentPassword, @RequestParam String newPassword,  @RequestParam int userId){
+		ModelAndView modelAndView = new ModelAndView();
+		User user = userService.findUserByUserId(Integer.toString(userId));
+
+		if(!accountService.verifyPassword(user, currentPassword)){
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info(user.getEmail() + " - current password doesn't match with the account's password.");
+			modelAndView.addObject("successMessage", "Current password doesn't match with the account's password.");
+		}else{
+			modelAndView.addObject("correct", "yes");
+			modelAndView.addObject("user", user);
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info(user.getEmail() + "'s password is changed.");
+			modelAndView.addObject("successMessage", "Successfuly changed the password");
+			modelAndView.setViewName("changePassword");
+
+		}
+
 		return modelAndView;
 	}
 	

@@ -175,4 +175,8 @@ public class UserServiceImpl implements UserService{
 			System.out.println(user.getEmail() + "/ " + user.getlogin_attempts() + " : " + user.getlockout_time());
 		}
 	}
+	@Override
+	public User findUserByUserId(String id) {
+		return userRepository.findById(id);
+	}
 }

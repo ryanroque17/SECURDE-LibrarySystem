@@ -12,6 +12,8 @@ import com.example.model.User;
 public interface UserService {
 	public ReadingMaterial findReadingMaterialById(int id);
 	public User findUserByEmail(String email);
+	public User findUserByUserId(String id);
+
 	public void saveUser(User user, String role);
 	public void reserveRoom(RoomReservation roomReservation);
 	public void reserveReadingMaterial(ReadingMaterial readingMaterial, ReadingMaterialReservation readingMaterialReservation);
