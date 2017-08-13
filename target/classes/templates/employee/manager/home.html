@@ -47,6 +47,13 @@
 						<ul id="login-dp" class="dropdown-menu">
 							<li>
 								<div class="row">
+								
+									<div class="bottom text-center">
+										<form th:action="@{/change-password}" method="get">
+											<button class="btn btn-md btn-danger btn-block" type="Submit">Change Password</button>
+										</form>
+									</div>
+									
 
 									<div class="bottom text-center">
 										<form th:action="@{/logout}" method="get">

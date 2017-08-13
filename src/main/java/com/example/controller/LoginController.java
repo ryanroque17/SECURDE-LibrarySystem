@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.crypt.BCrypt;
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.model.User;
@@ -95,11 +96,14 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/forgotPassword/secretAnswer", method = RequestMethod.POST)
-	public ModelAndView secretAnswer(@RequestParam String answer, @RequestParam int userId){
-		System.out.println("AW");
+	public ModelAndView secretAnswer(HttpSession session, @RequestParam String answer, @RequestParam int userId){
+		session.setMaxInactiveInterval(120);
 		ModelAndView modelAndView = new ModelAndView();
 		User user = userService.findUserByUserId(Integer.toString(userId));
-		if(!user.getSecretQuestionAnswer().equals(answer)){
+		
+		
+		System.out.println(answer + " " + user.getSecretQuestionAnswer());
+		if(!BCrypt.checkpw(answer, user.getSecretQuestionAnswer())){
 			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
 			log.info(user.getEmail() + " secret answer is incorrect.");
 			modelAndView.addObject("successMessage", "Secret answer is incorrect");
@@ -120,23 +124,17 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/forgotPassword/changePassword", method = RequestMethod.POST)
-	public ModelAndView changePassword(@RequestParam String currentPassword, @RequestParam String newPassword,  @RequestParam int userId){
+	public ModelAndView changePassword(@RequestParam String newPassword,  @RequestParam int userId){
 		ModelAndView modelAndView = new ModelAndView();
 		User user = userService.findUserByUserId(Integer.toString(userId));
 
-		if(!accountService.verifyPassword(user, currentPassword)){
-			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
-			log.info(user.getEmail() + " - current password doesn't match with the account's password.");
-			modelAndView.addObject("successMessage", "Current password doesn't match with the account's password.");
-		}else{
-			modelAndView.addObject("correct", "yes");
-			modelAndView.addObject("user", user);
-			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
-			log.info(user.getEmail() + "'s password is changed.");
-			modelAndView.addObject("successMessage", "Successfuly changed the password");
-			modelAndView.setViewName("changePassword");
-
-		}
+		accountService.changePassword(newPassword, user);
+		modelAndView.addObject("correct", "yes");
+		modelAndView.addObject("user", user);
+		Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+		log.info(user.getEmail() + "'s password is changed.");
+		modelAndView.addObject("successMessage", "Successfuly changed the password");
+		modelAndView.setViewName("login");
 
 		return modelAndView;
 	}
@@ -145,7 +143,7 @@ public class LoginController {
 	public ModelAndView createNewUser(@Valid @ModelAttribute("newUser") User user, BindingResult bindingResult, @RequestParam("role") String role) {
 		ModelAndView modelAndView = new ModelAndView();
 		User userExists = userService.findUserByEmail(user.getEmail());
-		System.out.println("Ads");
+		
 		if (userExists != null) {
 			bindingResult
 					.rejectValue("email", "error.user", 
@@ -156,7 +154,6 @@ public class LoginController {
 					.rejectValue("password", "password.user", 
 							"Password length must be greater than 8; contains at least one lower, upper, numeric, special character");
 		}
-		
 		
 		if (bindingResult.hasErrors()) {
 			if(role.equals("user"))
@@ -257,6 +254,46 @@ public class LoginController {
 		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage","Content Available Only for Users with" + auth.getAuthorities()+ " Role");
 		modelAndView.setViewName("employee/staff/home");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/change-password", method = RequestMethod.POST)
+	public ModelAndView changePassword(@RequestParam String currentPassword, @RequestParam String newPassword){
+		ModelAndView modelAndView = new ModelAndView();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findUserByEmail(auth.getName());
+		modelAndView.addObject("userId", user.getId());
+		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+
+		if(!accountService.verifyPassword(user, currentPassword)){
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info(user.getEmail() + " - current password doesn't match with the account's password.");
+			modelAndView.addObject("successMessage", "Current password doesn't match with the account's password.");
+		}else{
+			accountService.changePassword(newPassword, user);
+			modelAndView.addObject("correct", "yes");
+			modelAndView.addObject("user", user);
+			Logger log = LoggerFactory.getLogger(LoginController.class+"- forgotPasswordPost()");
+			log.info(user.getEmail() + "'s password is changed.");
+			modelAndView.addObject("successMessage", "Successfuly changed the password");
+			modelAndView.setViewName("/login");
+
+		}
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="/change-password", method = RequestMethod.GET)
+	public ModelAndView changePassword(){
+		ModelAndView modelAndView = new ModelAndView();
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		System.out.println("AAAA");
+		User user = userService.findUserByEmail(auth.getName());
+		System.out.println("AAA1");
+		modelAndView.addObject("userId", user.getId());
+		System.out.println("AAA2");
+		modelAndView.addObject("userName", "Welcome " + user.getFirstName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+		System.out.println("AAA3");
+		modelAndView.setViewName("change-password");
 		return modelAndView;
 	}
 }

@@ -9,10 +9,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.example.crypt.BCrypt;
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
 import com.example.model.Review;
@@ -35,8 +35,6 @@ public class UserServiceImpl implements UserService{
 	private UserRepository userRepository;
 	@Autowired
     private RoleRepository roleRepository;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 	@Autowired
 	private ReadingMaterialRepository readingMaterialRepository;
 	@Autowired
@@ -55,9 +53,9 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public void saveUser(User user, String role) {
-		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         user.setActive(1);
-        user.setSecretQuestionAnswer(bCryptPasswordEncoder.encode(user.getSecretQuestionAnswer()));
+        user.setSecretQuestionAnswer(BCrypt.hashpw(user.getSecretQuestionAnswer(), BCrypt.gensalt()));
         
         Role userRole = null;
 		if(role.equals("user")){

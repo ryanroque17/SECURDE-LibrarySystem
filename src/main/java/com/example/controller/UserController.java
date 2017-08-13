@@ -9,6 +9,8 @@ import java.util.Date;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,10 +20,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.model.ReadingMaterial;
 import com.example.model.ReadingMaterialReservation;
@@ -29,15 +29,16 @@ import com.example.model.Review;
 import com.example.model.Room;
 import com.example.model.RoomReservation;
 import com.example.model.User;
+import com.example.service.AccountService;
 import com.example.service.UserService;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Controller
 public class UserController {
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private AccountService accountService;
 	
 	@RequestMapping(value = "/library/reserve", method = RequestMethod.POST)
 	public ModelAndView reserveReadingMaterial(RedirectAttributes ra, @RequestParam("idReserve") int readingMaterialId, @RequestParam("idUser") String userId) {
@@ -179,4 +180,7 @@ public class UserController {
 		modelAndView.setViewName("/library/room");
 		return modelAndView;
 	}
+	
+	
+	
 }

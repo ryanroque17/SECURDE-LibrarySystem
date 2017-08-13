@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.crypt.BCrypt;
 import com.example.model.Role;
 import com.example.model.User;
 import com.example.repository.RoleRepository;
@@ -18,22 +19,19 @@ public class AccountServiceImpl implements AccountService{
 
 	@Autowired
 	private UserRepository userRepository;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 
 	@Override
-	public void changePassword(User user) {
-		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        
+	public void changePassword(String newPassword, User user) {
+		user.setPassword(BCrypt.hashpw(newPassword, BCrypt.gensalt()));
+		//userRepository.
 		userRepository.save(user);
 	}
 
 
 	@Override
 	public boolean verifyPassword(User user, String currentPassword) {
-		
-		return false;
+		return BCrypt.checkpw(currentPassword, user.getPassword());
 	}
 
 	
