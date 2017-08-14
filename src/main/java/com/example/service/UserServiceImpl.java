@@ -55,6 +55,8 @@ public class UserServiceImpl implements UserService{
 	public void saveUser(User user, String role) {
 		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         user.setActive(1);
+        user.setlogin_attempts(0);
+        user.setlockout_time(new Date());
         user.setSecretQuestionAnswer(BCrypt.hashpw(user.getSecretQuestionAnswer(), BCrypt.gensalt()));
         
         Role userRole = null;
@@ -135,7 +137,7 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public boolean passwordValidator(String password) {	
-		if(password.length()>=7 && !StringUtils.containsWhitespace(password))
+		if(password.length()>=8 && !StringUtils.containsWhitespace(password))
 	    {
 	        Pattern Upperletter = Pattern.compile("[A-z]");
 	        Pattern Lowerletter = Pattern.compile("[a-z]");

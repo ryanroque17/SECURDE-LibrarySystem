@@ -32,7 +32,7 @@ public class User {
 	@NotEmpty(message = "*Please provide an email")
 	private String email;
 	@Column(name = "password")
-	@Length(min = 5, message = "*Your password must have at least 6 characters")
+	@Length(min = 5, message = "*Your password must have at least 8 characters, contains at least one lower, upper, numeric, and special character")
 	@Transient
 	private String password;
 	@Column(name = "first_name")
