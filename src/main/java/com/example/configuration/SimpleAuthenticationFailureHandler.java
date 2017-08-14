@@ -44,7 +44,12 @@ public class SimpleAuthenticationFailureHandler implements AuthenticationFailure
 		Date today = new Date();
 		User user = userService.findUserByEmail(request.getParameter("email"));
 
-		if(user.getlockout_time() != null && user.getlockout_time().after(today)) {
+		if(user == null)
+		{
+			System.out.println("USER NOT EXIST");
+			redirectStrategy.sendRedirect(request, response, "/login?error=true");
+		}
+		else if(user.getlockout_time() != null && user.getlockout_time().after(today)) {
 			message = "Account has been lockout";
 			redirectStrategy.sendRedirect(request, response, "/login?error1=true");
 		}
