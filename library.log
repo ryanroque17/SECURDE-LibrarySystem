@@ -7340,3 +7340,1225 @@ Using default security password: 3a48858a-3e0b-43ab-ac5c-0796eb6cfabd
 2017-08-13 23:35:23 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
 2017-08-13 23:39:32 INFO  c.e.c.LoginController- forgotPasswordPost():270 - user@yahoo.com - current password doesn't match with the account's password.
 2017-08-13 23:39:36 INFO  c.e.c.LoginController- forgotPasswordPost():277 - user@yahoo.com's password is changed.
+2017-08-15 04:26:31 INFO  c.e.DemoApplication:48 - Starting DemoApplication on DESKTOP-D78D8EF with PID 19260 (C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem\target\classes started by JongHyun in C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem)
+2017-08-15 04:26:31 INFO  c.e.DemoApplication:661 - No active profile set, falling back to default profiles: default
+2017-08-15 04:26:31 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:582 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:26:31 SGT 2017]; root of context hierarchy
+2017-08-15 04:26:32 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-15 04:26:32 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2017-08-15 04:26:32 INFO  o.a.c.c.StandardService:179 - Starting service Tomcat
+2017-08-15 04:26:32 INFO  o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-15 04:26:32 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2017-08-15 04:26:32 INFO  o.s.w.c.ContextLoader:276 - Root WebApplicationContext: initialization completed in 1466 ms
+2017-08-15 04:26:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:26:33 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-08-15 04:26:33 INFO  o.h.Version:37 - HHH000412: Hibernate Core {5.0.11.Final}
+2017-08-15 04:26:33 INFO  o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2017-08-15 04:26:33 INFO  o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-08-15 04:26:33 INFO  o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-15 04:26:33 INFO  o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-15 04:26:34 INFO  o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2017-08-15 04:26:34 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:382 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:26:34 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:26:31 SGT 2017]; root of context hierarchy
+2017-08-15 04:26:34 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-15 04:26:34 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-15 04:26:34 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-15 04:26:34 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-15 04:26:34 INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-15 04:26:34 INFO  o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-15 04:26:35 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-08-15 04:26:35 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-08-15 04:26:35 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/**'], []
+2017-08-15 04:26:35 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/js/**'], []
+2017-08-15 04:26:35 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/images/**'], []
+2017-08-15 04:26:35 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a87026, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbd580, org.springframework.security.web.header.HeaderWriterFilter@58d6b7b9, org.springframework.security.web.csrf.CsrfFilter@376c7d7d, org.springframework.security.web.authentication.logout.LogoutFilter@69d45cca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43fda8d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d0d91a1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@474821de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef60710, org.springframework.security.web.session.SessionManagementFilter@6a6f6c7e, org.springframework.security.web.access.ExceptionTranslationFilter@24a86066, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77114efe]
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.unlockAccount()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createAccount()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.manageAccounts()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createNewAccount(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.saveEditReadingMaterial(java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.error()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration || /admin/create_employee],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.createNewUser(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/secretAnswer],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.secretAnswer(javax.servlet.http.HttpSession,java.lang.String,int)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.adminHome(javax.servlet.http.HttpSession)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/changePassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,int)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/ || /login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.login()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.libraryHome(javax.servlet.http.HttpSession)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.registration()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPassword()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.managerHome(javax.servlet.http.HttpSession)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.staffHome(javax.servlet.http.HttpSession)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPasswordPost(java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservationFinish(java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/override],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReservation()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservation()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editReadingMaterial()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterial()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservationFinish(java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterialFinish(int)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createReadingMaterial()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservation()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReadingMaterials()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editReadingMaterial()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterial()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterialFinish(int)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations(java.lang.String,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createReadingMaterial()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.staffeadingMaterials()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom(java.lang.String,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom()
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoomReserve(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.addReviewReadingMaterial(com.example.model.Review,int,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reserveReadingMaterial(org.springframework.web.servlet.mvc.support.RedirectAttributes,int,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.saveReserveReadingMaterial(com.example.model.ReadingMaterialReservation,org.springframework.validation.BindingResult,int,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reviewReadingMaterial(int,java.lang.String)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-15 04:26:35 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-15 04:26:35 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:26:35 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:26:35 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:26:35 INFO  o.s.b.a.s.AuthenticationManagerConfiguration:169 - 
+
+Using default security password: b304ea57-78e3-4a72-8235-2222e6d59428
+
+2017-08-15 04:26:35 INFO  o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2017-08-15 04:26:35 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2017-08-15 04:26:35 INFO  c.e.DemoApplication:57 - Started DemoApplication in 4.749 seconds (JVM running for 5.282)
+2017-08-15 04:26:46 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-15 04:26:46 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-15 04:26:46 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2017-08-15 04:26:51 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-15 04:26:51 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: null
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:47)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2017-08-15 04:27:35 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.NullPointerException: null
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:47)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2017-08-15 04:28:16 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.save(Unknown Source)
+	at com.example.service.UserServiceImpl.recordLoginFailure(UserServiceImpl.java:172)
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:53)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:87)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 70 common frames omitted
+Caused by: javax.validation.ConstraintViolationException: Validation failed for classes [com.example.model.User] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='*Your ID number must have 8 characters', propertyPath=id, rootBeanClass=class com.example.model.User, messageTemplate='*Your ID number must have 8 characters'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:138)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreUpdate(BeanValidationEventListener.java:86)
+	at org.hibernate.action.internal.EntityUpdateAction.preUpdate(EntityUpdateAction.java:244)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:118)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	... 71 common frames omitted
+2017-08-15 04:28:27 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.save(Unknown Source)
+	at com.example.service.UserServiceImpl.recordLoginFailure(UserServiceImpl.java:172)
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:53)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:87)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 70 common frames omitted
+Caused by: javax.validation.ConstraintViolationException: Validation failed for classes [com.example.model.User] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='*Your ID number must have 8 characters', propertyPath=id, rootBeanClass=class com.example.model.User, messageTemplate='*Your ID number must have 8 characters'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:138)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreUpdate(BeanValidationEventListener.java:86)
+	at org.hibernate.action.internal.EntityUpdateAction.preUpdate(EntityUpdateAction.java:244)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:118)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	... 71 common frames omitted
+2017-08-15 04:28:42 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2017-08-15 04:28:42 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:987 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:26:31 SGT 2017]; root of context hierarchy
+2017-08-15 04:28:42 INFO  o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2017-08-15 04:28:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:551 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:28:50 INFO  c.e.DemoApplication:48 - Starting DemoApplication on DESKTOP-D78D8EF with PID 2876 (C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem\target\classes started by JongHyun in C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem)
+2017-08-15 04:28:50 INFO  c.e.DemoApplication:661 - No active profile set, falling back to default profiles: default
+2017-08-15 04:28:50 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:582 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:28:50 SGT 2017]; root of context hierarchy
+2017-08-15 04:28:51 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-15 04:28:52 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2017-08-15 04:28:52 INFO  o.a.c.c.StandardService:179 - Starting service Tomcat
+2017-08-15 04:28:52 INFO  o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-15 04:28:52 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2017-08-15 04:28:52 INFO  o.s.w.c.ContextLoader:276 - Root WebApplicationContext: initialization completed in 1402 ms
+2017-08-15 04:28:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:28:52 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-08-15 04:28:52 INFO  o.h.Version:37 - HHH000412: Hibernate Core {5.0.11.Final}
+2017-08-15 04:28:52 INFO  o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2017-08-15 04:28:52 INFO  o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-08-15 04:28:52 INFO  o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-15 04:28:53 INFO  o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-15 04:28:53 INFO  o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2017-08-15 04:28:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:382 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:28:50 SGT 2017]; root of context hierarchy
+2017-08-15 04:28:54 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-15 04:28:54 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-15 04:28:54 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-15 04:28:54 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-15 04:28:54 INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-15 04:28:54 INFO  o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-15 04:28:54 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-08-15 04:28:54 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-08-15 04:28:54 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/**'], []
+2017-08-15 04:28:54 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/js/**'], []
+2017-08-15 04:28:54 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/images/**'], []
+2017-08-15 04:28:54 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a87026, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbd580, org.springframework.security.web.header.HeaderWriterFilter@58d6b7b9, org.springframework.security.web.csrf.CsrfFilter@376c7d7d, org.springframework.security.web.authentication.logout.LogoutFilter@69d45cca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43fda8d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d0d91a1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@474821de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef60710, org.springframework.security.web.session.SessionManagementFilter@6a6f6c7e, org.springframework.security.web.access.ExceptionTranslationFilter@24a86066, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77114efe]
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.unlockAccount()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createAccount()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.manageAccounts()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createNewAccount(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.saveEditReadingMaterial(java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.error()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/ || /login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.login()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/changePassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,int)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.adminHome(javax.servlet.http.HttpSession)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.libraryHome(javax.servlet.http.HttpSession)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.registration()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPassword()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration || /admin/create_employee],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.createNewUser(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/secretAnswer],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.secretAnswer(javax.servlet.http.HttpSession,java.lang.String,int)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.managerHome(javax.servlet.http.HttpSession)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.staffHome(javax.servlet.http.HttpSession)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPasswordPost(java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservationFinish(java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservation()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservationFinish(java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservation()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editReadingMaterial()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterial()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReadingMaterials()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/override],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReservation()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterialFinish(int)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createReadingMaterial()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.staffeadingMaterials()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editReadingMaterial()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterial()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterialFinish(int)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createReadingMaterial()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations(java.lang.String,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom(java.lang.String,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom()
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoomReserve(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.addReviewReadingMaterial(com.example.model.Review,int,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reviewReadingMaterial(int,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reserveReadingMaterial(org.springframework.web.servlet.mvc.support.RedirectAttributes,int,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.saveReserveReadingMaterial(com.example.model.ReadingMaterialReservation,org.springframework.validation.BindingResult,int,java.lang.String)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-15 04:28:54 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-15 04:28:54 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:28:54 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:28:54 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:28:55 INFO  o.s.b.a.s.AuthenticationManagerConfiguration:169 - 
+
+Using default security password: f5c4f8e5-88d9-49ba-82a0-ee01b9b1f8cf
+
+2017-08-15 04:28:55 INFO  o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2017-08-15 04:28:55 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2017-08-15 04:28:55 INFO  c.e.DemoApplication:57 - Started DemoApplication in 4.698 seconds (JVM running for 5.251)
+2017-08-15 04:28:58 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-15 04:28:58 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-15 04:28:58 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2017-08-15 04:29:03 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-15 04:29:03 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.save(Unknown Source)
+	at com.example.service.UserServiceImpl.recordLoginFailure(UserServiceImpl.java:172)
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:53)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:87)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 70 common frames omitted
+Caused by: javax.validation.ConstraintViolationException: Validation failed for classes [com.example.model.User] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='*Your ID number must have 8 characters', propertyPath=id, rootBeanClass=class com.example.model.User, messageTemplate='*Your ID number must have 8 characters'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:138)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreUpdate(BeanValidationEventListener.java:86)
+	at org.hibernate.action.internal.EntityUpdateAction.preUpdate(EntityUpdateAction.java:244)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:118)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	... 71 common frames omitted
+2017-08-15 04:31:33 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.save(Unknown Source)
+	at com.example.service.UserServiceImpl.recordLoginFailure(UserServiceImpl.java:172)
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:53)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:87)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 70 common frames omitted
+Caused by: javax.validation.ConstraintViolationException: Validation failed for classes [com.example.model.User] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='*Your ID number must have 8 characters', propertyPath=id, rootBeanClass=class com.example.model.User, messageTemplate='*Your ID number must have 8 characters'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:138)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreUpdate(BeanValidationEventListener.java:86)
+	at org.hibernate.action.internal.EntityUpdateAction.preUpdate(EntityUpdateAction.java:244)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:118)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	... 71 common frames omitted
+2017-08-15 04:34:48 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]:181 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:526)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:504)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy102.save(Unknown Source)
+	at com.example.service.UserServiceImpl.recordLoginFailure(UserServiceImpl.java:172)
+	at com.example.configuration.SimpleAuthenticationFailureHandler.onAuthenticationFailure(SimpleAuthenticationFailureHandler.java:53)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.unsuccessfulAuthentication(AbstractAuthenticationProcessingFilter.java:352)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:230)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:121)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.persistence.RollbackException: Error while committing the transaction
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:87)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	... 70 common frames omitted
+Caused by: javax.validation.ConstraintViolationException: Validation failed for classes [com.example.model.User] during update time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='*Your ID number must have 8 characters', propertyPath=id, rootBeanClass=class com.example.model.User, messageTemplate='*Your ID number must have 8 characters'}
+]
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:138)
+	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreUpdate(BeanValidationEventListener.java:86)
+	at org.hibernate.action.internal.EntityUpdateAction.preUpdate(EntityUpdateAction.java:244)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:118)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:582)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:456)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:337)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	... 71 common frames omitted
+2017-08-15 04:36:27 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2017-08-15 04:36:27 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:987 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:28:50 SGT 2017]; root of context hierarchy
+2017-08-15 04:36:27 INFO  o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2017-08-15 04:36:27 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:551 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:36:30 INFO  c.e.DemoApplication:48 - Starting DemoApplication on DESKTOP-D78D8EF with PID 2188 (C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem\target\classes started by JongHyun in C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem)
+2017-08-15 04:36:30 INFO  c.e.DemoApplication:661 - No active profile set, falling back to default profiles: default
+2017-08-15 04:36:30 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:582 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:36:30 SGT 2017]; root of context hierarchy
+2017-08-15 04:36:31 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-15 04:36:31 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2017-08-15 04:36:31 INFO  o.a.c.c.StandardService:179 - Starting service Tomcat
+2017-08-15 04:36:31 INFO  o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-15 04:36:31 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2017-08-15 04:36:31 INFO  o.s.w.c.ContextLoader:276 - Root WebApplicationContext: initialization completed in 1268 ms
+2017-08-15 04:36:32 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:36:32 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-08-15 04:36:32 INFO  o.h.Version:37 - HHH000412: Hibernate Core {5.0.11.Final}
+2017-08-15 04:36:32 INFO  o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2017-08-15 04:36:32 INFO  o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-08-15 04:36:32 INFO  o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-15 04:36:32 INFO  o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-15 04:36:32 INFO  o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2017-08-15 04:36:33 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:382 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:36:30 SGT 2017]; root of context hierarchy
+2017-08-15 04:36:33 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-15 04:36:33 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-15 04:36:33 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-15 04:36:33 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-15 04:36:33 INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-15 04:36:33 INFO  o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-15 04:36:33 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-08-15 04:36:33 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-08-15 04:36:33 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/**'], []
+2017-08-15 04:36:33 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/js/**'], []
+2017-08-15 04:36:33 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/images/**'], []
+2017-08-15 04:36:33 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a87026, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbd580, org.springframework.security.web.header.HeaderWriterFilter@58d6b7b9, org.springframework.security.web.csrf.CsrfFilter@376c7d7d, org.springframework.security.web.authentication.logout.LogoutFilter@69d45cca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43fda8d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d0d91a1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@474821de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef60710, org.springframework.security.web.session.SessionManagementFilter@6a6f6c7e, org.springframework.security.web.access.ExceptionTranslationFilter@24a86066, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77114efe]
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createNewAccount(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.unlockAccount()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.manageAccounts()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createAccount()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.saveEditReadingMaterial(java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.error()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.registration()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/changePassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,int)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPassword()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.managerHome(javax.servlet.http.HttpSession)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/ || /login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.login()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.adminHome(javax.servlet.http.HttpSession)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.libraryHome(javax.servlet.http.HttpSession)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration || /admin/create_employee],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.createNewUser(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.staffHome(javax.servlet.http.HttpSession)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/secretAnswer],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.secretAnswer(javax.servlet.http.HttpSession,java.lang.String,int)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPasswordPost(java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editReadingMaterial()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterial()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createReadingMaterial()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/override],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReservation()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReadingMaterials()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservationFinish(java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservation()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservation()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterialFinish(int)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservationFinish(java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editReadingMaterial()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterial()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createReadingMaterial()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations(java.lang.String,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterialFinish(int)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.staffeadingMaterials()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom()
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom(java.lang.String,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reserveReadingMaterial(org.springframework.web.servlet.mvc.support.RedirectAttributes,int,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.saveReserveReadingMaterial(com.example.model.ReadingMaterialReservation,org.springframework.validation.BindingResult,int,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoomReserve(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.addReviewReadingMaterial(com.example.model.Review,int,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reviewReadingMaterial(int,java.lang.String)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-15 04:36:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-15 04:36:33 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:36:33 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:36:33 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:36:33 INFO  o.s.b.a.s.AuthenticationManagerConfiguration:169 - 
+
+Using default security password: 7032b0ea-ef3e-49ff-b6e0-f7276b1a940b
+
+2017-08-15 04:36:34 INFO  o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2017-08-15 04:36:34 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2017-08-15 04:36:34 INFO  c.e.DemoApplication:57 - Started DemoApplication in 4.038 seconds (JVM running for 4.522)
+2017-08-15 04:36:37 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-15 04:36:37 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-15 04:36:37 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2017-08-15 04:36:48 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-15 04:39:36 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2017-08-15 04:39:36 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:987 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:36:30 SGT 2017]; root of context hierarchy
+2017-08-15 04:39:36 INFO  o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2017-08-15 04:39:36 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:551 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:39:39 INFO  c.e.DemoApplication:48 - Starting DemoApplication on DESKTOP-D78D8EF with PID 11328 (C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem\target\classes started by JongHyun in C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem)
+2017-08-15 04:39:39 INFO  c.e.DemoApplication:661 - No active profile set, falling back to default profiles: default
+2017-08-15 04:39:39 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:582 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:39:39 SGT 2017]; root of context hierarchy
+2017-08-15 04:39:40 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-15 04:39:40 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2017-08-15 04:39:40 INFO  o.a.c.c.StandardService:179 - Starting service Tomcat
+2017-08-15 04:39:40 INFO  o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-15 04:39:41 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2017-08-15 04:39:41 INFO  o.s.w.c.ContextLoader:276 - Root WebApplicationContext: initialization completed in 1287 ms
+2017-08-15 04:39:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:39:41 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-08-15 04:39:41 INFO  o.h.Version:37 - HHH000412: Hibernate Core {5.0.11.Final}
+2017-08-15 04:39:41 INFO  o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2017-08-15 04:39:41 INFO  o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-08-15 04:39:41 INFO  o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-15 04:39:41 INFO  o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-15 04:39:42 INFO  o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2017-08-15 04:39:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:382 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:39:42 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:39:39 SGT 2017]; root of context hierarchy
+2017-08-15 04:39:42 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-15 04:39:42 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-15 04:39:42 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-15 04:39:42 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-15 04:39:42 INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-15 04:39:42 INFO  o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-15 04:39:43 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-08-15 04:39:43 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-08-15 04:39:43 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/**'], []
+2017-08-15 04:39:43 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/js/**'], []
+2017-08-15 04:39:43 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/images/**'], []
+2017-08-15 04:39:43 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a87026, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbd580, org.springframework.security.web.header.HeaderWriterFilter@58d6b7b9, org.springframework.security.web.csrf.CsrfFilter@376c7d7d, org.springframework.security.web.authentication.logout.LogoutFilter@69d45cca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43fda8d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d0d91a1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@474821de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef60710, org.springframework.security.web.session.SessionManagementFilter@6a6f6c7e, org.springframework.security.web.access.ExceptionTranslationFilter@24a86066, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77114efe]
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.saveEditReadingMaterial(java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.manageAccounts()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createAccount()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createNewAccount(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.unlockAccount()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.error()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPasswordPost(java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/ || /login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.login()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPassword()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/secretAnswer],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.secretAnswer(javax.servlet.http.HttpSession,java.lang.String,int)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/changePassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,int)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.registration()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration || /admin/create_employee],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.createNewUser(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.staffHome(javax.servlet.http.HttpSession)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.libraryHome(javax.servlet.http.HttpSession)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.adminHome(javax.servlet.http.HttpSession)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.managerHome(javax.servlet.http.HttpSession)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservationFinish(java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/override],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReservation()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createReadingMaterial()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReadingMaterials()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterialFinish(int)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editReadingMaterial()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservationFinish(java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservation()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservation()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterial()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createReadingMaterial()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterialFinish(int)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.staffeadingMaterials()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations(java.lang.String,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editReadingMaterial()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterial()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reserveReadingMaterial(org.springframework.web.servlet.mvc.support.RedirectAttributes,int,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.saveReserveReadingMaterial(com.example.model.ReadingMaterialReservation,org.springframework.validation.BindingResult,int,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.addReviewReadingMaterial(com.example.model.Review,int,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reviewReadingMaterial(int,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoomReserve(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom(java.lang.String,java.lang.String)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom()
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-15 04:39:43 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-15 04:39:43 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:39:43 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:39:43 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:39:43 INFO  o.s.b.a.s.AuthenticationManagerConfiguration:169 - 
+
+Using default security password: 9e54114f-716c-46bc-b017-6ae27db3f56e
+
+2017-08-15 04:39:43 INFO  o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2017-08-15 04:39:43 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2017-08-15 04:39:43 INFO  c.e.DemoApplication:57 - Started DemoApplication in 4.149 seconds (JVM running for 4.636)
+2017-08-15 04:39:44 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-15 04:39:44 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-15 04:39:44 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2017-08-15 04:41:08 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-15 04:44:03 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2017-08-15 04:44:03 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:987 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:39:39 SGT 2017]; root of context hierarchy
+2017-08-15 04:44:03 INFO  o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2017-08-15 04:44:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:551 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:44:09 INFO  c.e.DemoApplication:48 - Starting DemoApplication on DESKTOP-D78D8EF with PID 4180 (C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem\target\classes started by JongHyun in C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem)
+2017-08-15 04:44:09 INFO  c.e.DemoApplication:661 - No active profile set, falling back to default profiles: default
+2017-08-15 04:44:09 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:582 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:44:09 SGT 2017]; root of context hierarchy
+2017-08-15 04:44:10 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7de35d56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-15 04:44:11 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2017-08-15 04:44:11 INFO  o.a.c.c.StandardService:179 - Starting service Tomcat
+2017-08-15 04:44:11 INFO  o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-15 04:44:11 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2017-08-15 04:44:11 INFO  o.s.w.c.ContextLoader:276 - Root WebApplicationContext: initialization completed in 1316 ms
+2017-08-15 04:44:11 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:44:11 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-08-15 04:44:11 INFO  o.h.Version:37 - HHH000412: Hibernate Core {5.0.11.Final}
+2017-08-15 04:44:11 INFO  o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2017-08-15 04:44:11 INFO  o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-08-15 04:44:11 INFO  o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-15 04:44:12 INFO  o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-15 04:44:12 INFO  o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2017-08-15 04:44:12 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:382 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:44:12 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:44:09 SGT 2017]; root of context hierarchy
+2017-08-15 04:44:12 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-15 04:44:12 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-15 04:44:12 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-15 04:44:12 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-15 04:44:12 INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-15 04:44:12 INFO  o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-15 04:44:13 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-08-15 04:44:13 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-08-15 04:44:13 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/**'], []
+2017-08-15 04:44:13 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/js/**'], []
+2017-08-15 04:44:13 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/images/**'], []
+2017-08-15 04:44:13 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a87026, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbd580, org.springframework.security.web.header.HeaderWriterFilter@58d6b7b9, org.springframework.security.web.csrf.CsrfFilter@376c7d7d, org.springframework.security.web.authentication.logout.LogoutFilter@69d45cca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@43fda8d9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7d0d91a1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@474821de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@ef60710, org.springframework.security.web.session.SessionManagementFilter@6a6f6c7e, org.springframework.security.web.access.ExceptionTranslationFilter@24a86066, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77114efe]
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.saveEditReadingMaterial(java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.unlockAccount()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createAccount()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createNewAccount(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.manageAccounts()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.error()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPasswordPost(java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.registration()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/secretAnswer],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.secretAnswer(javax.servlet.http.HttpSession,java.lang.String,int)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/ || /login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.login()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.adminHome(javax.servlet.http.HttpSession)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/changePassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,int)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.libraryHome(javax.servlet.http.HttpSession)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPassword()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration || /admin/create_employee],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.createNewUser(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.staffHome(javax.servlet.http.HttpSession)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.managerHome(javax.servlet.http.HttpSession)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservationFinish(java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservation()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReadingMaterials()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterialFinish(int)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/override],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReservation()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservationFinish(java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createReadingMaterial()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editReadingMaterial()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterial()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservation()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterialFinish(int)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations(java.lang.String,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.staffeadingMaterials()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createReadingMaterial()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editReadingMaterial()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterial()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reserveReadingMaterial(org.springframework.web.servlet.mvc.support.RedirectAttributes,int,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.saveReserveReadingMaterial(com.example.model.ReadingMaterialReservation,org.springframework.validation.BindingResult,int,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoomReserve(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reviewReadingMaterial(int,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.addReviewReadingMaterial(com.example.model.Review,int,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom(java.lang.String,java.lang.String)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom()
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-15 04:44:13 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-15 04:44:13 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:44:13 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:44:13 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:44:13 INFO  o.s.b.a.s.AuthenticationManagerConfiguration:169 - 
+
+Using default security password: 30d05c69-e836-403f-aefa-43e5d27d5909
+
+2017-08-15 04:44:13 INFO  o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2017-08-15 04:44:13 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2017-08-15 04:44:13 INFO  c.e.DemoApplication:57 - Started DemoApplication in 4.286 seconds (JVM running for 4.805)
+2017-08-15 04:44:59 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-15 04:44:59 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-15 04:44:59 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2017-08-15 04:45:03 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-08-15 04:49:22 INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin:125 - Application shutdown requested.
+2017-08-15 04:49:22 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:987 - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:44:09 SGT 2017]; root of context hierarchy
+2017-08-15 04:49:22 INFO  o.s.j.e.a.AnnotationMBeanExporter:449 - Unregistering JMX-exposed beans on shutdown
+2017-08-15 04:49:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:551 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:49:27 INFO  c.e.DemoApplication:48 - Starting DemoApplication on DESKTOP-D78D8EF with PID 8356 (C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem\target\classes started by JongHyun in C:\Users\JongHyun\Documents\GitHub\SECURDE-LibrarySystem)
+2017-08-15 04:49:27 INFO  c.e.DemoApplication:661 - No active profile set, falling back to default profiles: default
+2017-08-15 04:49:27 INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext:582 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:49:27 SGT 2017]; root of context hierarchy
+2017-08-15 04:49:28 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:325 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6c8343c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-08-15 04:49:28 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:87 - Tomcat initialized with port(s): 8080 (http)
+2017-08-15 04:49:28 INFO  o.a.c.c.StandardService:179 - Starting service Tomcat
+2017-08-15 04:49:28 INFO  o.a.c.c.StandardEngine:179 - Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-08-15 04:49:28 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring embedded WebApplicationContext
+2017-08-15 04:49:28 INFO  o.s.w.c.ContextLoader:276 - Root WebApplicationContext: initialization completed in 1360 ms
+2017-08-15 04:49:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:49:29 INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-08-15 04:49:29 INFO  o.h.Version:37 - HHH000412: Hibernate Core {5.0.11.Final}
+2017-08-15 04:49:29 INFO  o.h.c.Environment:213 - HHH000206: hibernate.properties not found
+2017-08-15 04:49:29 INFO  o.h.c.Environment:317 - HHH000021: Bytecode provider name : javassist
+2017-08-15 04:49:29 INFO  o.h.a.c.Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-08-15 04:49:29 INFO  o.h.d.Dialect:156 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-08-15 04:49:30 INFO  o.h.t.h.SchemaUpdate:105 - HHH000228: Running hbm2ddl schema update
+2017-08-15 04:49:30 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:382 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-08-15 04:49:30 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@16e7dcfd: startup date [Tue Aug 15 04:49:27 SGT 2017]; root of context hierarchy
+2017-08-15 04:49:30 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-08-15 04:49:30 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-08-15 04:49:30 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-08-15 04:49:30 INFO  o.s.b.w.s.FilterRegistrationBean:258 - Mapping filter: 'requestContextFilter' to: [/*]
+2017-08-15 04:49:30 INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean:258 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-08-15 04:49:30 INFO  o.s.b.w.s.ServletRegistrationBean:190 - Mapping servlet: 'dispatcherServlet' to [/]
+2017-08-15 04:49:30 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/resources/**'], []
+2017-08-15 04:49:30 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/static/**'], []
+2017-08-15 04:49:30 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/css/**'], []
+2017-08-15 04:49:30 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/js/**'], []
+2017-08-15 04:49:30 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: Ant [pattern='/images/**'], []
+2017-08-15 04:49:30 INFO  o.s.s.w.DefaultSecurityFilterChain:43 - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ef60710, org.springframework.security.web.context.SecurityContextPersistenceFilter@6c101cc1, org.springframework.security.web.header.HeaderWriterFilter@3f1a4795, org.springframework.security.web.csrf.CsrfFilter@4784efd9, org.springframework.security.web.authentication.logout.LogoutFilter@2fdf17dc, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@49d831c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fb48179, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d64c581, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@600f5704, org.springframework.security.web.session.SessionManagementFilter@6c5ddccd, org.springframework.security.web.access.ExceptionTranslationFilter@54402c04, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@79a7bfbc]
+2017-08-15 04:49:30 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.saveEditReadingMaterial(java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createNewAccount(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.createAccount()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/unlock],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.unlockAccount()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.AdminController.manageAccounts()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.error()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPasswordPost(java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.registration()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/ || /login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.login()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.forgotPassword()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/secretAnswer],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.secretAnswer(javax.servlet.http.HttpSession,java.lang.String,int)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/change-password],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/forgotPassword/changePassword],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.changePassword(java.lang.String,int)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/registration || /admin/create_employee],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.createNewUser(com.example.model.User,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/admin/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.adminHome(javax.servlet.http.HttpSession)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.libraryHome(javax.servlet.http.HttpSession)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.staffHome(javax.servlet.http.HttpSession)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.LoginController.managerHome(javax.servlet.http.HttpSession)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservationFinish(java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editReadingMaterial()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createReadingMaterial()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideMaterial],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideMaterialReservation()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReadingMaterials()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterial()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/override],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.manageReservation()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.deleteReadingMaterialFinish(int)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservation()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/manager/overrideRoom],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.ManagerController.overrideRoomReservationFinish(java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editReadingMaterial()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createReadingMaterial()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/create],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.createNewReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit/{title}],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.editSpecificReadingMaterial(java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/edit],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.saveEditReadingMaterial(com.example.model.ReadingMaterial,org.springframework.validation.BindingResult)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterial()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/delete],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.deleteReadingMaterialFinish(int)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/manage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.staffeadingMaterials()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/employee/staff/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.StaffController.viewRoomReservations(java.lang.String,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoomReserve(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.saveReserveReadingMaterial(com.example.model.ReadingMaterialReservation,org.springframework.validation.BindingResult,int,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reviewReadingMaterial(int,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/reserve],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.reserveReadingMaterial(org.springframework.web.servlet.mvc.support.RedirectAttributes,int,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/review/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.addReviewReadingMaterial(com.example.model.Review,int,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom()
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/library/room],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.example.controller.UserController.libraryRoom(java.lang.String,java.lang.String)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-08-15 04:49:31 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping:543 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-08-15 04:49:31 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:49:31 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:49:31 INFO  o.s.w.s.h.SimpleUrlHandlerMapping:354 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-08-15 04:49:31 INFO  o.s.b.a.s.AuthenticationManagerConfiguration:169 - 
+
+Using default security password: d1efd3cd-dae5-403e-b13a-b2897d0151b9
+
+2017-08-15 04:49:31 INFO  o.s.j.e.a.AnnotationMBeanExporter:431 - Registering beans for JMX exposure on startup
+2017-08-15 04:49:31 INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer:185 - Tomcat started on port(s): 8080 (http)
+2017-08-15 04:49:31 INFO  c.e.DemoApplication:57 - Started DemoApplication in 4.313 seconds (JVM running for 4.825)
+2017-08-15 04:49:31 INFO  o.a.c.c.C.[.[.[/]:179 - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-08-15 04:49:31 INFO  o.s.w.s.DispatcherServlet:489 - FrameworkServlet 'dispatcherServlet': initialization started
+2017-08-15 04:49:31 INFO  o.s.w.s.DispatcherServlet:508 - FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2017-08-15 04:49:39 INFO  o.h.h.i.QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory

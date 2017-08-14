@@ -37,10 +37,12 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
 			{
 				String message = "Account has been lockout";
 				System.out.println(message);
-				redirectStrategy.sendRedirect(arg0 , arg1, "/login?error=true");
+				redirectStrategy.sendRedirect(arg0 , arg1, "/login?error1=true");
 			}
 			else
 			{
+				userService.recordLoginSuccess(user);
+				
 				authorities.forEach(authority -> {
 					if(authority.getAuthority().equals("STUDENT") || authority.getAuthority().equals("FACULTY")) {
 						try {

@@ -161,10 +161,16 @@ public class UserServiceImpl implements UserService{
 		
 		if(user != null)
 		{
-			user.incrementlogin_attempts();
+			
+			if(user.getlockout_time().before(new Date()))
+			{
+				user.incrementlogin_attempts();
+			}
+			
 			if(user.getlogin_attempts() >= 2)
 			{
 				Date lockout = new Date(t + (2 * 60000));
+				user.setlogin_attempts(0);
 				user.setlockout_time(lockout);
 			}
 			
@@ -173,6 +179,20 @@ public class UserServiceImpl implements UserService{
 			System.out.println(user.getEmail() + "/ " + user.getlogin_attempts() + " : " + user.getlockout_time());
 		}
 	}
+	
+	public void recordLoginSuccess(User user) {
+		String email = user.getEmail();
+		
+		if(user != null)
+		{
+			user.setlogin_attempts(0);
+
+			userRepository.save(user);
+			user = userRepository.findByEmail(email);
+			System.out.println(user.getEmail() + "/ " + user.getlogin_attempts() + " : " + user.getlockout_time());
+		}
+	};
+	
 	@Override
 	public User findUserByUserId(String id) {
 		return userRepository.findById(id);

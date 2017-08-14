@@ -24,4 +24,5 @@ public interface UserService {
 	public void addReview(Review review);
 	public boolean passwordValidator(String password);
 	public void recordLoginFailure(User user);
+	public void recordLoginSuccess(User user);
 }

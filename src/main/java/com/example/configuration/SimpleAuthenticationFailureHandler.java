@@ -46,7 +46,7 @@ public class SimpleAuthenticationFailureHandler implements AuthenticationFailure
 
 		if(user.getlockout_time() != null && user.getlockout_time().after(today)) {
 			message = "Account has been lockout";
-			redirectStrategy.sendRedirect(request, response, "/login?error=true");
+			redirectStrategy.sendRedirect(request, response, "/login?error1=true");
 		}
 		else if(exception instanceof BadCredentialsException) {
 	        message = "BadCredentialsException";

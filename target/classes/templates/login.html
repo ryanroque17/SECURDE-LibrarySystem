@@ -45,6 +45,10 @@
 										<p style="font-size: 20; color: #FF1C19;">Email or
 											Password invalid, please verify</p>
 									</div>
+									
+									<div align="center" th:if="${param.error1}">
+										<p style="font-size: 20; color: #FF1C19;">Account has been lockout, please try again later</p>
+									</div>
 
 									<div class="form-group">
 										<div class="row">
