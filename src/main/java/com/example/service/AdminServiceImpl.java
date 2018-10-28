@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +47,7 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public void unlockUser(User user) {
-		user.setActive(1);
+        user.setlockout_time(new Date());
 		userRepository.save(user);
 	}
 
@@ -58,7 +59,16 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public ArrayList<User> getAllInactiveUsers() {
-		return userRepository.findByActive(0);
+		ArrayList<User> inactiveUsers = new ArrayList<User>();
+		ArrayList<User> user = userRepository.findAll();
+		
+		for(int i=0; i<user.size();i++){
+			if(user.get(i).getlockout_time()!=null)
+				if(user.get(i).getlockout_time().after(new Date()))
+					inactiveUsers.add(user.get(i));
+		}
+		
+		return inactiveUsers;
 	}
 
 	@Override

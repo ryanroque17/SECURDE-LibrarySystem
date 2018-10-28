@@ -44,8 +44,7 @@ public class ManagerController {
 	@RequestMapping(value = "/employee/manager/override", method = RequestMethod.GET)
 	public ModelAndView manageReservation() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("/employee/manager/override");
-
+		modelAndView.setViewName("/employee/manager/override") ;
 		return modelAndView;
 	}
 
@@ -56,7 +55,12 @@ public class ManagerController {
 		
 		modelAndView.addObject("newReadingMaterial", readingMaterial);
 		modelAndView.setViewName("/employee/manager/create");
-
+		int i =5;
+		
+		{
+			i=10;
+		}
+		
 		return modelAndView;
 	}
 
